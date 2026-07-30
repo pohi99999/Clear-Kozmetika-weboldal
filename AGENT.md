@@ -72,6 +72,17 @@ A `Z:\001_Workspace\Hetenyi_Reni\` kozmetikai weboldal átfogó elemzése alapj�
      - Érintési felületek garanciája (min. 44x44px touch targets) az összes gombnál, navigációs hivatkozásnál és hamburger menü gombnál, finom `box-shadow` mélységérzettel ellátva.
      - Explicit `aspect-ratio` rögzítés a hero szekciónál, a kártyaelőnézeteknél, az ikon jelvényeknél és az avatároknál a layout shift (CLS) teljes nullázására.
 
+### [2026-07-30] - Galaxy S25 Ultra Mobil Menü Z-Index, Backdrop & Hero Layout Fix
+- **Elvégzett javítások:**
+  1. **Mobil Hamburger Menü Overlay & Backdrop Fix (`src/css/components/header.css` és `index.html` inline CSS):**
+     - Mobil navigáció overlay (`.main-nav`, `.nav-menu`) `z-index` értéke `9999`-re állítva, hogy garantáltan minden elem felett jelenjen meg.
+     - Megnyitott mobil menü háttere 100%-os szilárd sötét áttetszőségre frissítve: `background: rgba(26, 26, 26, 0.98);` és `backdrop-filter: blur(15px);` (`-webkit-backdrop-filter: blur(15px);`), megelőzve a mögötte lévő Hero elemek átlátszódását és egybecsúszását.
+     - `.mobile-menu-btn` `z-index: 10000;` beállítása a menügomb folyamatos elérhetőségéhez, továbbá a mobil menüpontok szövegszínének kontrasztosítása (`#FFFFFF`).
+     - `top: 0; left: 0; width: 100vw; height: 100vh; position: fixed;` lefedettség biztosítása.
+  2. **Hero Szekció & Jobb Szél Elcsúszás Fix (`src/css/components/hero.css`, `style.css` és `index.html` inline CSS):**
+     - A `.hero-section`, `.hero-content` és `.hero-title` elemeknél biztonsági margó rögzítve: `padding-left: 1.25rem; padding-right: 1.25rem; box-sizing: border-box; max-width: 100%;`.
+     - Jobb szélen túllógó szövegek és törések megelőzése: `word-break: break-word; overflow-wrap: break-word;` Galaxy S25 Ultra és nagy felbontású mobil kijelzőkön.
+
 
 
 

@@ -7,9 +7,12 @@
   justify-content: center;
   background: linear-gradient(135deg, rgba(251, 248, 245, 0.92), rgba(243, 238, 231, 0.88)),
               url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-  padding: 9.5rem 2rem 5.5rem 2rem;
-  overflow: hidden;
+  padding: 9.5rem 1.25rem 5.5rem 1.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-sizing: border-box;
   max-width: 100%;
+  overflow: hidden;
   aspect-ratio: 16 / 9;
 }
 
@@ -31,12 +34,20 @@
   position: relative;
   z-index: 2;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-sizing: border-box;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-badge {
@@ -55,6 +66,9 @@
   margin-bottom: 1.8rem;
   letter-spacing: 1px;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: break-word;
 }
 
 .hero-badge i {
@@ -70,6 +84,12 @@
   color: var(--color-text-main);
   margin-bottom: 1.5rem;
   letter-spacing: -0.5px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-sizing: border-box;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-title .highlight-gold {
