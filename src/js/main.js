@@ -1,5 +1,5 @@
 /**
- * Main Entry Point & Global Interactions
+ * Main Entry Point & Global WOW Factor Interactions
  * Clear Kozmetika (Kelemen Anikó) - Pécs Donátus
  */
 
@@ -9,7 +9,7 @@ import { initGiftCardModule } from './modules/giftcard.js';
 import { initLoyaltyModule } from './modules/loyalty.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Clear Kozmetika Web Application Initialized.');
+  console.log('Clear Kozmetika Web Application (v1.0 WOW Edition) Initialized.');
 
   // Header Scroll Effect
   const header = document.querySelector('.site-header');
@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close menu when clicking links
     mainNav.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
       link.addEventListener('click', () => {
         mainNav.classList.remove('active');
@@ -47,6 +46,35 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Brand-Split Interactive Slider / Switcher
+  const splitToggleBtns = document.querySelectorAll('.split-toggle-btn');
+  const bioCard = document.getElementById('card-bio');
+  const techCard = document.getElementById('card-tech');
+
+  splitToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.split;
+
+      splitToggleBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (mode === 'bio') {
+        bioCard?.classList.remove('dimmed');
+        bioCard?.classList.add('focused');
+        techCard?.classList.remove('focused');
+        techCard?.classList.add('dimmed');
+      } else if (mode === 'tech') {
+        techCard?.classList.remove('dimmed');
+        techCard?.classList.add('focused');
+        bioCard?.classList.remove('focused');
+        bioCard?.classList.add('dimmed');
+      } else {
+        bioCard?.classList.remove('dimmed', 'focused');
+        techCard?.classList.remove('dimmed', 'focused');
+      }
+    });
+  });
 
   // Service Matrix Tab Switching
   const tabBtns = document.querySelectorAll('.service-tab-btn');
@@ -66,6 +94,29 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Scroll Reveal Animations via IntersectionObserver
+  const revealElements = document.querySelectorAll('.split-card, .service-card, .calculator-card, .giftcard-container, .appointment-card');
+  
+  revealElements.forEach(el => {
+    el.classList.add('reveal-on-scroll');
+  });
+
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach(el => revealObserver.observe(el));
 
   // Initialize functional modules
   initQuizModule();

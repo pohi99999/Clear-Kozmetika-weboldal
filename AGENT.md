@@ -58,16 +58,11 @@ A `Z:\001_Workspace\Hetenyi_Reni\` kozmetikai weboldal átfogó elemzése alapj�
     - Kelemen Anikó szakmai portréjának és a szalon 4 fős szakértői ökoszisztémájának beépítése (Kelemen Anikó, Vilmos Krisztina, Vilmos Nóra, Minakhom Vatsana).
     - Teljes Szolgáltatási Mátrix és Árlista integrálása 4 tabos bontásban (Arckezelések, Gépi & Elektro-Esztétika, Fasciális Terápiák, Tartós Smink).
     - Interaktív modulok HTML konténereinek és a felugró `#booking-modal` ablaknak a teljes beépítése.
-### [2026-07-30] - Munkamenet Zárása & v1.0 Release
-- **Projekt Státusza:** **1.0-s Kész Látványterv és Működő Prototípus - Készen áll a bemutatásra / ügyfél felülvizsgálatra**.
-- **Megvalósított Eredmények:**
-  1. *Kettős Márkaidentitás & Arculat:* Kódolt Design System (`variables.css`: Champagne Gold, Soft Beige, Bio Leaf Green, Terracotta, Deep Charcoal), glassmorphic elemekkel, Playfair Display tipográfiával és micro-animációkkal.
-  2. *Gazdag Szakmai Tartalom (`index.html`):* Kelemen Anikó hivatástudata, 100% szűrt, rézkancsóban strukturált víz védjegy, 4 fős szalon-ökoszisztéma csapat, teljes Szolgáltatási Mátrix 4 tabos bontásban.
-  3. *4 Fő Interaktív Modul (`src/js/modules/`):*
-     - **Bőrápolási Rutin Kérdőív & Diagnosztika (`quiz.js`):** Személyre szabott kezelés- és termékajánló.
-     - **Digitális Névreszóló Ajándékutalvány (`giftcard.js`):** Valós idejű élő előnézeti kártya frissítés.
-     - **24/7 Online Időpontfoglaló (`booking.js`):** Felugró modal ablak automatikus emlékeztető szimulációval.
-     - **VIP Hűségpont Rendszer (`loyalty.js`):** Pontszámítás, VIP szintek (Bronz, Ezüst, Arany, Gyémánt) és ajándékbeváltó előnézet.
-- **Következő Lépések (2.0-s Fázis):**
-  - Ügyféli felülvizsgálat & visszajelzések finomhangolása.
-  - Vercel Serverless Node.js backend funkciók élesítése.
+### [2026-07-30] - Hűha-Faktor & Világszínvonal Vizuális Frissítés
+- **Projekt Státusza:** **1.0-s Világszínvonalú Prémium Prototípus - Élesítve & Felkészítve a Vercel Élesítési és Bemutató Fázisra**.
+- **Új Vizuális & Interaktív Fejlesztések:**
+  1. **Brand-Split Interaktív Csúszka / Switcher:** Dynamic mode selector (`data-split="all"`, `data-split="bio"`, `data-split="tech"`) finom dimming/focus kiemeléssel és vizuális háttérképekkel a Holisztikus Bio és az Orvos-Esztétika szinergiájára.
+  2. **3D Interaktív Ajándékutalvány:** Egér- és érintéskövető 3D Tilt/Gyro hatás (`transform: perspective(1000px) rotateX/Y`), aranyfólia csillogás (`giftcard-preview::after` sheen animation) és valós idejű gépelési visszajelzés (`triggerGlow`).
+  3. **Visual Skin Diagnostics 2.0 & Personal Skin Care Pass:** Vizuális ikonos kártyák, egyedi `CLEAR-PASS-XXXX` digitális kártya generálása és 1-kattintásos pre-selected időpontfoglalás.
+  4. **Scroll Reveal Animációk & Premium Visual Tuning:** `IntersectionObserver` alapú gördülési beúszás (`.reveal-on-scroll.is-visible`), nagyfelbontású Unsplash kozmetikai háttérképek és lágy arany/sötét overlay gradients.
+

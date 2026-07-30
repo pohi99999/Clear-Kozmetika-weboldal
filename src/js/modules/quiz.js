@@ -1,5 +1,5 @@
 /**
- * Skin Diagnostics & Treatment Quiz Module
+ * Visual Skin Diagnostics 2.0 & Personal Skin Care Pass Generator
  * Clear Kozmetika (Kelemen Anikó)
  */
 
@@ -9,22 +9,22 @@ export function initQuizModule() {
 
   const state = {
     goal: 'antiaging',
-    skinType: 'normal',
-    ageGroup: '25-40'
+    type: 'normal',
+    age: '25-40'
   };
 
-  const optionBtns = quizContainer.querySelectorAll('.quiz-option-btn');
-  optionBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const currentBtn = e.currentTarget;
-      const parentGrid = currentBtn.closest('.quiz-options-grid');
+  const optionCards = quizContainer.querySelectorAll('.quiz-option-card');
+  optionCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      const currentCard = e.currentTarget;
+      const parentGrid = currentCard.closest('.quiz-options-grid');
       if (!parentGrid) return;
 
-      parentGrid.querySelectorAll('.quiz-option-btn').forEach(b => b.classList.remove('selected'));
-      currentBtn.classList.add('selected');
+      parentGrid.querySelectorAll('.quiz-option-card').forEach(c => c.classList.remove('selected'));
+      currentCard.classList.add('selected');
 
-      const val = currentBtn.dataset.value;
-      const type = currentBtn.dataset.type;
+      const val = currentCard.dataset.value;
+      const type = currentCard.dataset.type;
       if (type && val) {
         state[type] = val;
       }
@@ -32,47 +32,96 @@ export function initQuizModule() {
   });
 
   const calculateBtn = document.getElementById('quiz-submit-btn');
-  const resultCard = document.getElementById('quiz-result-card');
+  const resultContainer = document.getElementById('quiz-result-card');
 
-  if (calculateBtn && resultCard) {
+  if (calculateBtn && resultContainer) {
     calculateBtn.addEventListener('click', () => {
       let treatment = '';
       let desc = '';
       let product = '';
+      let icon = 'fa-sparkles';
+      let tag = 'Anti-Aging & Kollagén Rituálé';
 
       if (state.goal === 'antiaging') {
-        treatment = 'Fasciális Arcterápia – Arany Csomag & EndoTight Facelift';
-        desc = 'Kötőszöveti mély masszázs Clear Vadrózsa Q10 szérummal és mikrovibrációs kollagén stimulációval.';
-        product = 'Clear Vadrózsa Q10 Arcszérum (Bio & Demeter alapanyagokkal)';
+        treatment = 'Fasciális Arcterápia (Arany Csomag) & EndoTight Facelift';
+        desc = 'Kötőszöveti mélymasszázs Clear Argán Vadrózsa Q10 szérummal és 55 gömbös kompressziós mikrovibrációval a természetes kollagénindukcióért.';
+        product = 'Clear Vadrózsa Q10 Bio Arcszérum (Bio & Demeter alapanyagokból)';
+        icon = 'fa-wand-magic-sparkles';
+        tag = 'Bőrfiatalító & Feszesítő Passz';
       } else if (state.goal === 'cleansing') {
-        treatment = 'Hollywood Carbon Peeling (Nd:YAG) & Mélytisztítás';
-        desc = 'Lézeres pórustisztítás, faggyútermelés-szabályozás és gyulladáscsökkentés.';
-        product = 'Clear Tisztító & Matító Bio Rituálé Szett';
+        treatment = 'Hollywood Carbon Peeling (Nd:YAG Lézer) & Mélytisztítás';
+        desc = 'Carbon géllel és orvosi Nd:YAG lézerrel végzett bőrmegújítás, faggyútermelés-szabályozás és pórustisztítás.';
+        product = 'Clear Bio Tisztító & Pore-Minimizer Arcápoló Rituálé';
+        icon = 'fa-droplet';
+        tag = 'Mélytisztító & Matító Passz';
       } else if (state.goal === 'rosacea') {
         treatment = 'Rozaceás Arckezelés Safe Lézerrel (808 nm)';
-        desc = 'Magyar orvosi szabadalmaztatott biostimulációs lézerterápia a hajszálerek mikrokerengéséért.';
-        product = 'Clear Nyugtató Orvosi Körömvirág & Argán Szérum';
+        desc = 'Magyar orvosi szabadalmaztatott biostimulációs 808nm lézerterápia a hajszálerek gyulladáscsökkentéséért és regenerálásáért.';
+        product = 'Clear Orvosi Körömvirág & Nyugtató Argán Elixír';
+        icon = 'fa-heart-pulse';
+        tag = 'Gyulladáscsökkentő & Nyugtató Passz';
       } else {
         treatment = 'HIEMT & Monosculpt RF Kombinált Alakformáló Kúra';
-        desc = 'Magas intenzitású elektromágneses izomépítés és 2MHz monopoláris rádiófrekvenciás zsírégetés.';
-        product = 'Clear Feszesítő Bio Body Elixír';
+        desc = 'Magas intenzitású elektromágneses izomfejlesztés (20k felülés) és 2MHz monopoláris rádiófrekvenciás mély zsírégetés.';
+        product = 'Clear Feszesítő Bio Body Elixír & Cellulit Ápoló';
+        icon = 'fa-child-reaching';
+        tag = 'Alakformáló & Zsírégető Passz';
       }
 
-      resultCard.innerHTML = `
-        <div style="background: rgba(212, 175, 55, 0.1); border: 1px solid var(--color-primary); border-radius: var(--border-radius-md); padding: 2rem; margin-top: 2rem; text-align: left; animation: fadeIn 0.5s ease;">
-          <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--color-primary-dark); font-weight: 700;">Az Ön Személyre Szabott Diagnosztikája</span>
-          <h3 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-text-main); margin: 0.5rem 0 1rem 0;">${treatment}</h3>
-          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.2rem;">${desc}</p>
-          <div style="background: var(--color-bg-card); padding: 1rem; border-radius: var(--border-radius-sm); border-left: 4px solid var(--color-secondary); margin-bottom: 1.5rem;">
-            <strong style="color: var(--color-secondary); font-size: 0.88rem;">Ajánlott Otthoni Ápolás:</strong>
-            <p style="margin-top: 0.2rem; font-size: 0.9rem; color: var(--color-text-main);">${product}</p>
+      const passId = 'CLEAR-PASS-' + Math.floor(1000 + Math.random() * 9000);
+
+      resultContainer.innerHTML = `
+        <div class="personal-skin-pass" style="background: linear-gradient(135deg, rgba(251, 248, 245, 0.95), rgba(243, 238, 231, 0.9)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80') center/cover no-repeat; background-blend-mode: overlay; border: 2px solid var(--color-primary); border-radius: var(--border-radius-lg); padding: 2.5rem 2rem; margin-top: 2.5rem; box-shadow: var(--shadow-hover); position: relative; animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1); text-align: left;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--color-border-gold); padding-bottom: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--color-primary-dark); font-weight: 700;">${tag}</span>
+              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-text-main); margin-top: 0.2rem;"><i class="fa-solid ${icon}" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Personal Skin Care Pass</h3>
+            </div>
+            <div style="background: var(--color-primary); color: var(--color-text-main); font-weight: 700; font-size: 0.85rem; padding: 0.4rem 1rem; border-radius: var(--border-radius-pill); letter-spacing: 1px;">
+              ${passId}
+            </div>
           </div>
-          <a href="#idopontfoglalas" class="btn-primary" style="display: inline-flex; width: 100%; justify-content: center;">
-            <i class="fa-solid fa-calendar-check"></i> Időpontfoglalás erre a Kezelésre
+
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--color-text-main); margin-bottom: 0.5rem;">Ajánlott Szalonkezelés:</h4>
+            <p style="font-size: 1rem; font-weight: 600; color: var(--color-primary-dark); margin-bottom: 0.4rem;">${treatment}</p>
+            <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6;">${desc}</p>
+          </div>
+
+          <div style="background: var(--color-bg-card); padding: 1.2rem 1.5rem; border-radius: var(--border-radius-md); border-left: 4px solid var(--color-secondary); margin-bottom: 1.8rem; box-shadow: var(--shadow-subtle);">
+            <strong style="color: var(--color-secondary); font-size: 0.88rem; text-transform: uppercase; letter-spacing: 1px;">Ajánlott Otthoni Bio Ápolás:</strong>
+            <p style="margin-top: 0.3rem; font-size: 0.95rem; font-weight: 600; color: var(--color-text-main);">${product}</p>
+          </div>
+
+          <a href="#idopontfoglalas" class="btn-primary open-booking-modal-btn" style="display: inline-flex; width: 100%; justify-content: center; font-size: 1rem; padding: 1.1rem;">
+            <i class="fa-solid fa-calendar-check"></i> Időpontfoglalás Ezzel A Passz-szal
           </a>
         </div>
       `;
-      resultCard.scrollIntoView({ behavior: 'smooth' });
+
+      resultContainer.scrollIntoView({ behavior: 'smooth' });
+
+      // Re-bind modal button event
+      const newBookingBtn = resultContainer.querySelector('.open-booking-modal-btn');
+      if (newBookingBtn) {
+        newBookingBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const modal = document.getElementById('booking-modal');
+          const serviceSelect = document.getElementById('booking-service-select');
+          if (modal) {
+            if (serviceSelect) {
+              // Pre-select calculated treatment
+              for (let i = 0; i < serviceSelect.options.length; i++) {
+                if (serviceSelect.options[i].text.toLowerCase().includes(state.goal === 'rosacea' ? 'rozaceás' : state.goal === 'cleansing' ? 'carbon' : state.goal === 'bodysculpt' ? 'hiemt' : 'fasciális')) {
+                  serviceSelect.selectedIndex = i;
+                  break;
+                }
+              }
+            }
+            modal.style.display = 'flex';
+          }
+        });
+      }
     });
   }
 }

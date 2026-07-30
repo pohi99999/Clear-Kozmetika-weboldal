@@ -1,38 +1,64 @@
-/* Brand Split Component (Bio Holisztikus vs Orvos-Esztétika) - Clear Kozmetika */
+/* Brand Split Component (Interactive Split-Screen Slider Edition) */
 .brand-split-section {
-  padding: 7rem 2rem;
+  padding: 7.5rem 2rem;
   background: var(--color-bg-main);
   position: relative;
+  overflow: hidden;
 }
 
-.section-header {
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto 4.5rem auto;
+/* Interactive Slider Controls Bar */
+.brand-split-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-bg-alt);
+  padding: 0.4rem;
+  border-radius: var(--border-radius-pill);
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+  border: 1px solid var(--color-border-gold);
+  box-shadow: var(--shadow-subtle);
 }
 
-.section-tag {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: var(--color-primary-dark);
+.split-toggle-btn {
+  flex: 1;
+  padding: 0.85rem 1.4rem;
+  border: none;
+  border-radius: var(--border-radius-pill);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
   font-weight: 700;
-  margin-bottom: 0.8rem;
-  display: block;
-}
-
-.section-title {
-  font-family: var(--font-heading);
-  font-size: 2.7rem;
-  color: var(--color-text-main);
-  margin-bottom: 1.2rem;
-  line-height: 1.2;
-}
-
-.section-desc {
-  font-size: 1.05rem;
   color: var(--color-text-muted);
-  line-height: 1.7;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.split-toggle-btn:hover {
+  color: var(--color-text-main);
+}
+
+.split-toggle-btn.active[data-split="bio"] {
+  background: var(--color-secondary);
+  color: var(--color-text-light);
+  box-shadow: var(--shadow-bio);
+}
+
+.split-toggle-btn.active[data-split="all"] {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary-dark));
+  color: var(--color-text-light);
+  box-shadow: var(--shadow-medium);
+}
+
+.split-toggle-btn.active[data-split="tech"] {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-text-main);
+  box-shadow: var(--shadow-gold);
 }
 
 .split-grid {
@@ -41,12 +67,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
+  transition: var(--transition-normal);
 }
 
 .split-card {
   background: var(--color-bg-card);
   border-radius: var(--border-radius-lg);
-  padding: 3.5rem 3rem;
+  padding: 3.8rem 3rem;
   box-shadow: var(--shadow-subtle);
   border: 1px solid var(--color-border);
   transition: var(--transition-normal);
@@ -57,33 +84,68 @@
   justify-content: space-between;
 }
 
+.split-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+  transition: var(--transition-normal);
+}
+
+.split-card.bio-card::before {
+  background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80');
+}
+
+.split-card.tech-card::before {
+  background-image: url('https://images.unsplash.com/photo-1512290900676-26c2a48f4134?auto=format&fit=crop&w=800&q=80');
+}
+
 .split-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.01);
   box-shadow: var(--shadow-hover);
 }
 
 .split-card.bio-card {
-  border-top: 5px solid var(--color-secondary);
+  border-top: 6px solid var(--color-secondary);
 }
 
 .split-card.tech-card {
-  border-top: 5px solid var(--color-primary);
+  border-top: 6px solid var(--color-primary);
+}
+
+.split-card.focused {
+  transform: scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  z-index: 5;
+}
+
+.split-card.dimmed {
+  opacity: 0.45;
+  filter: grayscale(40%);
+  transform: scale(0.97);
 }
 
 .split-icon-badge {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
-  margin-bottom: 1.8rem;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
   transition: var(--transition-fast);
+  box-shadow: var(--shadow-subtle);
 }
 
 .bio-card .split-icon-badge {
-  background: rgba(74, 107, 93, 0.12);
+  background: rgba(74, 107, 93, 0.14);
   color: var(--color-secondary);
 }
 
@@ -93,7 +155,7 @@
 }
 
 .tech-card .split-icon-badge {
-  background: rgba(212, 175, 55, 0.15);
+  background: rgba(212, 175, 55, 0.18);
   color: var(--color-primary-dark);
 }
 
@@ -104,7 +166,7 @@
 
 .split-card-title {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 2.1rem;
   margin-bottom: 1.2rem;
   color: var(--color-text-main);
 }
@@ -112,8 +174,8 @@
 .split-card-text {
   font-size: 1rem;
   color: var(--color-text-muted);
-  line-height: 1.75;
-  margin-bottom: 2rem;
+  line-height: 1.8;
+  margin-bottom: 2.2rem;
 }
 
 .split-feature-list {
@@ -125,15 +187,15 @@
 .split-feature-item {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  font-size: 0.95rem;
+  gap: 1rem;
+  font-size: 0.96rem;
   color: var(--color-text-main);
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   font-weight: 500;
 }
 
 .split-feature-item i {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 .bio-card .split-feature-item i {
@@ -150,7 +212,19 @@
     gap: 2rem;
   }
 
-  .split-card {
-    padding: 2.5rem 2rem;
+  .brand-split-controls {
+    flex-direction: column;
+    border-radius: var(--border-radius-md);
+  }
+
+  .split-toggle-btn {
+    width: 100%;
+  }
+
+  .split-card.dimmed,
+  .split-card.focused {
+    transform: none;
+    opacity: 1;
+    filter: none;
   }
 }

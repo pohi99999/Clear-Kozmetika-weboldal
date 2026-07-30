@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Clear Kozmetika – Kelemen Anikó | Luxus Bőrápolás Természetesen">
   <meta property="og:description" content="Bio & Demeter minősítésű holisztikus kezelések és prémium elektro-esztétikai bőrfiatalítás Pécs-Donátusban.">
-  <meta property="og:url" content="https://clearkozmetika.hu">
+  <meta property="og:url" content="https://clear-kozmetika.vercel.app">
   <meta property="og:locale" content="hu_HU">
 
   <!-- Google Fonts -->
@@ -66,6 +66,7 @@
   <main>
     <!-- Hero Section -->
     <section class="hero-section" id="kezdolap">
+      <div class="hero-overlay"></div>
       <div class="hero-container">
         <div class="hero-content">
           <div class="hero-badge">
@@ -154,14 +155,27 @@
       </div>
     </section>
 
-    <!-- Brand Split Section: Bio vs CSúcstechnológia -->
+    <!-- Brand Split Section: Interaktív Csúszkával / Switcherrel -->
     <section class="brand-split-section" id="filozofia">
       <div class="section-header">
-        <span class="section-tag">Kettős Márkaidentitás</span>
+        <span class="section-tag">Kettős Márkaidentitás &amp; Szinergia</span>
         <h2 class="section-title">A Természet Ereje &amp; A Tudomány Precizitása</h2>
         <p class="section-desc">
-          Szalonunkban a holisztikus belső egyensúly megteremtése és a klinikai hatékonyságú gépi kezelések egymást erősítve biztosítják a hosszantartó fiatalságot és ragyogást.
+          Használja az alábbi csúszkát a két fő pillér részletes felfedezéséhez és összehasonlításához!
         </p>
+      </div>
+
+      <!-- Interactive Switcher Controls -->
+      <div class="brand-split-controls">
+        <button class="split-toggle-btn active" data-split="all">
+          <i class="fa-solid fa-layer-group"></i> Szinergikus Összkép
+        </button>
+        <button class="split-toggle-btn" data-split="bio">
+          <i class="fa-solid fa-seedling"></i> Holisztikus Bio Fókusz
+        </button>
+        <button class="split-toggle-btn" data-split="tech">
+          <i class="fa-solid fa-microchip"></i> High-Tech Orvos-Esztétika
+        </button>
       </div>
 
       <div class="split-grid">
@@ -450,38 +464,55 @@
       </div>
     </section>
 
-    <!-- Interaktív Bőrápolási Rutin Kérdőív -->
+    <!-- Interaktív Vizuális Bőrápolási Kérdőív 2.0 -->
     <section class="calculator-section" id="borapolas-quiz">
       <div class="calculator-card">
         <div class="quiz-header">
-          <span class="section-tag">Interaktív Szakértő</span>
+          <span class="section-tag">Vizuális Szakértő 2.0</span>
           <h2 class="section-title">Bőrápolási Rutin &amp; Kezelés Választó</h2>
-          <p class="section-desc">Válassza ki bőrének jelenlegi állapotát és célját – okos rendszerünk azonnal megadja a személyre szabott szalon- és otthonápolási javaslatot!</p>
+          <p class="section-desc">Kattintson az Ön bőrápolási céljára illeszkedő ikonos kártyára, és állítsa elő egyedi <strong>Personal Skin Care Pass</strong> digitális kártyáját!</p>
         </div>
 
-        <div class="quiz-step-title">1. Lépés: Mi az Ön elsődleges bőrápolási célja?</div>
+        <div class="quiz-step-title">Válassza ki elsődleges bőrápolási célját:</div>
+        
+        <!-- Visual Option Cards -->
         <div class="quiz-options-grid">
-          <button class="quiz-option-btn selected" data-type="goal" data-value="antiaging">
-            <div class="quiz-option-title"><i class="fa-solid fa-sparkles"></i> Anti-Aging &amp; Feszesítés</div>
-            <div class="quiz-option-desc">Ránctalanítás, kötőszöveti tónusjavítás</div>
-          </button>
-          <button class="quiz-option-btn" data-type="goal" data-value="cleansing">
-            <div class="quiz-option-title"><i class="fa-solid fa-droplet"></i> Mélytisztítás &amp; Akné</div>
-            <div class="quiz-option-desc">Faggyúszabályozás, pórustisztítás</div>
-          </button>
-          <button class="quiz-option-btn" data-type="goal" data-value="rosacea">
-            <div class="quiz-option-title"><i class="fa-solid fa-heart-pulse"></i> Gyulladáscsökkentés</div>
-            <div class="quiz-option-desc">Rozacea, hajszálér biostimuláció</div>
-          </button>
-          <button class="quiz-option-btn" data-type="goal" data-value="bodysculpt">
-            <div class="quiz-option-title"><i class="fa-solid fa-child-reaching"></i> Alakformálás</div>
+          <div class="quiz-option-card selected" data-type="goal" data-value="antiaging">
+            <div class="quiz-option-icon">
+              <i class="fa-solid fa-sparkles"></i>
+            </div>
+            <div class="quiz-option-title">Anti-Aging</div>
+            <div class="quiz-option-desc">Ránctalanítás &amp; Kollagén stimuláció</div>
+          </div>
+
+          <div class="quiz-option-card" data-type="goal" data-value="cleansing">
+            <div class="quiz-option-icon">
+              <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div class="quiz-option-title">Mélytisztítás</div>
+            <div class="quiz-option-desc">Akné, faggyú- &amp; pórustisztítás</div>
+          </div>
+
+          <div class="quiz-option-card" data-type="goal" data-value="rosacea">
+            <div class="quiz-option-icon">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div class="quiz-option-title">Gyulladáscsökkentés</div>
+            <div class="quiz-option-desc">Rozacea &amp; Safe Lézer biostimuláció</div>
+          </div>
+
+          <div class="quiz-option-card" data-type="goal" data-value="bodysculpt">
+            <div class="quiz-option-icon">
+              <i class="fa-solid fa-child-reaching"></i>
+            </div>
+            <div class="quiz-option-title">Alakformálás</div>
             <div class="quiz-option-desc">HIEMT izomépítés &amp; RF zsírégetés</div>
-          </button>
+          </div>
         </div>
 
         <div style="text-align: center;">
-          <button class="btn-primary" id="quiz-submit-btn" style="font-size: 1rem; padding: 1rem 2.5rem;">
-            <i class="fa-solid fa-calculator"></i> Személyre Szabott Ajánlás Generálása
+          <button class="btn-primary" id="quiz-submit-btn" style="font-size: 1rem; padding: 1.1rem 2.8rem;">
+            <i class="fa-solid fa-id-card"></i> Personal Skin Care Pass Generálása
           </button>
         </div>
 
@@ -489,20 +520,20 @@
       </div>
     </section>
 
-    <!-- Giftcard Section Customizer -->
+    <!-- 3D Giftcard Section Customizer -->
     <section class="giftcard-section" id="ajandekutalvany">
       <div class="giftcard-container">
         <div>
           <span class="section-tag" style="color: var(--color-primary-light);">Ajakándékozzon Élmányt</span>
           <h2 class="section-title" style="color: var(--color-text-light);">Digitális Névreszóló Ajándékutalvány</h2>
-          <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem; line-height: 1.7;">
-            Válasszon fix összeget vagy konkrét kényeztető rituálét. Az utalvány azonnal letölthető és e-mailben is megérkezik névreszóló PDF formátumban!
+          <p style="color: rgba(255,255,255,0.82); margin-bottom: 2rem; line-height: 1.75;">
+            Tervezze meg névreszóló utalványát! Mozgassa a kurzort a kártya felett az interaktív 3D fémfényű hatás kipróbálásához.
           </p>
 
           <form id="giftcard-customizer-form" style="display: flex; flex-direction: column; gap: 1.2rem;">
             <div>
               <label style="display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; color: var(--color-primary-light);">Összeg / Kezelés Kiválasztása</label>
-              <select id="giftcard-amount-select" style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.4); color: white; font-family: inherit;">
+              <select id="giftcard-amount-select" style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: white; font-family: inherit;">
                 <option value="15 000 Ft">15 000 Ft – S.O.S Fasciális Arcterápia</option>
                 <option value="25 000 Ft" selected>25 000 Ft – Prémium Bio &amp; Lézer Rituálé</option>
                 <option value="50 000 Ft">50 000 Ft – Bronz Fasciális Kúra Bérlet</option>
@@ -513,17 +544,17 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
               <div>
                 <label style="display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; color: var(--color-primary-light);">Megajándékozott Neve</label>
-                <input type="text" id="giftcard-recipient-input" placeholder="pl. Kovács Katalin" style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.4); color: white;">
+                <input type="text" id="giftcard-recipient-input" placeholder="pl. Kovács Katalin" style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: white;">
               </div>
               <div>
                 <label style="display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; color: var(--color-primary-light);">Az Ön Neve</label>
-                <input type="text" id="giftcard-sender-input" placeholder="pl. Péter" style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.4); color: white;">
+                <input type="text" id="giftcard-sender-input" placeholder="pl. Péter" style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: white;">
               </div>
             </div>
 
             <div>
               <label style="display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; color: var(--color-primary-light);">Személyes Üzenet</label>
-              <input type="text" id="giftcard-message-input" placeholder="pl. Szeretettel és kényeztető élménnyel!" style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.4); color: white;">
+              <input type="text" id="giftcard-message-input" placeholder="pl. Szeretettel és kényeztető élménnyel!" style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: white;">
             </div>
 
             <button type="button" class="btn-primary" id="giftcard-buy-btn" style="margin-top: 1rem; width: 100%; justify-content: center;">
@@ -532,15 +563,17 @@
           </form>
         </div>
 
-        <!-- Live Preview Card -->
-        <div class="giftcard-preview">
-          <div class="giftcard-brand">CLEAR KOZMETIKA</div>
-          <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--color-primary-light);">Exkluzív Digitális Utalvány</p>
-          <div class="giftcard-amount" id="preview-giftcard-amount">25 000 Ft</div>
-          <div style="border-top: 1px dashed rgba(255,255,255,0.3); padding-top: 1rem; margin-top: 1rem;">
-            <p style="font-size: 0.9rem;"><strong>Címzett:</strong> <span id="preview-giftcard-recipient">Kovács Katalin</span></p>
-            <p style="font-size: 0.9rem;"><strong>Kitől:</strong> <span id="preview-giftcard-sender">Péter</span></p>
-            <p style="font-size: 0.85rem; font-style: italic; opacity: 0.85; margin-top: 0.5rem;" id="preview-giftcard-message">"Szeretettel és kényeztető élménnyel!"</p>
+        <!-- Live 3D Tilt Preview Card -->
+        <div class="giftcard-3d-wrapper">
+          <div class="giftcard-preview" id="giftcard-3d-preview">
+            <div class="giftcard-brand">CLEAR KOZMETIKA</div>
+            <div class="giftcard-tag">Exkluzív Digitális Utalvány</div>
+            <div class="giftcard-amount" id="preview-giftcard-amount">25 000 Ft</div>
+            <div class="giftcard-details">
+              <p><strong>Címzett:</strong> <span id="preview-giftcard-recipient">Kovács Katalin</span></p>
+              <p><strong>Kitől:</strong> <span id="preview-giftcard-sender">Péter</span></p>
+              <div class="giftcard-message-box" id="preview-giftcard-message">"Szeretettel és kényeztető élménnyel!"</div>
+            </div>
           </div>
         </div>
       </div>
@@ -554,41 +587,41 @@
         <p class="section-desc">Minden nálunk elköltött 100 Ft után 1 VIP pontot jóváírunk fiókjában, melyeket ingyenes kezelsekre és Clear Cosmetic natúr termékekre válthat be.</p>
       </div>
 
-      <div style="max-width: 800px; margin: 0 auto; background: var(--color-bg-card); border-radius: var(--border-radius-lg); padding: 3rem; box-shadow: var(--shadow-medium); border: 1px solid var(--color-border-gold);">
+      <div style="max-width: 850px; margin: 0 auto; background: var(--color-bg-card); border-radius: var(--border-radius-lg); padding: 3.5rem 3rem; box-shadow: var(--shadow-medium); border: 1px solid var(--color-border-gold);">
         <div style="margin-bottom: 2rem;">
-          <label style="display: block; font-weight: 600; margin-bottom: 0.6rem; color: var(--color-text-main);">Számítsa Ki Várható VIP Pontjait:</label>
-          <input type="number" id="loyalty-amount-input" value="50000" step="5000" style="width: 100%; padding: 1rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-size: 1.1rem; font-family: inherit;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.6rem; color: var(--color-text-main);">Számítsa Ki Várható VIP Pontjait (Ft):</label>
+          <input type="number" id="loyalty-amount-input" value="50000" step="5000" style="width: 100%; padding: 1.1rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-size: 1.15rem; font-family: inherit;">
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background: var(--color-bg-alt); padding: 1.5rem; border-radius: var(--border-radius-md); margin-bottom: 2.5rem; text-align: center;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background: var(--color-bg-alt); padding: 1.8rem; border-radius: var(--border-radius-md); margin-bottom: 2.5rem; text-align: center;">
           <div>
-            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-text-muted);">Várható Pontok:</span>
-            <div id="loyalty-points-display" style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--color-primary-dark);">500 VIP Pont</div>
+            <span style="font-size: 0.82rem; text-transform: uppercase; color: var(--color-text-muted); font-weight: 700;">Várható Pontok:</span>
+            <div id="loyalty-points-display" style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--color-primary-dark);">500 VIP Pont</div>
           </div>
           <div>
-            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-text-muted);">VIP Szint:</span>
-            <div id="loyalty-tier-display" style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-secondary); margin-top: 0.4rem;">Ezüst VIP</div>
+            <span style="font-size: 0.82rem; text-transform: uppercase; color: var(--color-text-muted); font-weight: 700;">VIP Szint:</span>
+            <div id="loyalty-tier-display" style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--color-secondary); margin-top: 0.4rem;">Ezüst VIP</div>
           </div>
         </div>
 
-        <h4 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1.2rem;">Beváltható Jutalamak &amp; Ajándékok:</h4>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem;">
-          <div class="loyalty-reward-item" data-points="300" style="background: var(--color-bg-main); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); padding: 1.2rem; text-align: center;">
+        <h4 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 1.4rem;">Beváltható Jutalamak &amp; Ajándékok:</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+          <div class="loyalty-reward-item" data-points="300" style="background: var(--color-bg-main); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); padding: 1.4rem; text-align: center;">
             <div class="reward-badge" style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.4rem;">Azonnal Beváltható</div>
-            <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.3rem;">300 Pont</strong>
-            <span style="font-size: 0.85rem; color: var(--color-text-muted);">Ingyenes Ultrahangos Hatóanyag-bevitel</span>
+            <strong style="font-size: 1rem; display: block; margin-bottom: 0.3rem;">300 Pont</strong>
+            <span style="font-size: 0.88rem; color: var(--color-text-muted);">Ingyenes Ultrahangos Hatóanyag-bevitel</span>
           </div>
 
-          <div class="loyalty-reward-item" data-points="800" style="background: var(--color-bg-main); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); padding: 1.2rem; text-align: center;">
+          <div class="loyalty-reward-item" data-points="800" style="background: var(--color-bg-main); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); padding: 1.4rem; text-align: center;">
             <div class="reward-badge" style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.4rem;">Szükséges: 800 pont</div>
-            <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.3rem;">800 Pont</strong>
-            <span style="font-size: 0.85rem; color: var(--color-text-muted);">Clear Cosmetic Natúr Arcszérum Ajándékba</span>
+            <strong style="font-size: 1rem; display: block; margin-bottom: 0.3rem;">800 Pont</strong>
+            <span style="font-size: 0.88rem; color: var(--color-text-muted);">Clear Cosmetic Natúr Arcszérum Ajándékba</span>
           </div>
 
-          <div class="loyalty-reward-item" data-points="1500" style="background: var(--color-bg-main); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); padding: 1.2rem; text-align: center;">
+          <div class="loyalty-reward-item" data-points="1500" style="background: var(--color-bg-main); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); padding: 1.4rem; text-align: center;">
             <div class="reward-badge" style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.4rem;">Szükséges: 1500 pont</div>
-            <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.3rem;">1500 Pont</strong>
-            <span style="font-size: 0.85rem; color: var(--color-text-muted);">Ingyenes Safe Lézer Kezelés Alkalom</span>
+            <strong style="font-size: 1rem; display: block; margin-bottom: 0.3rem;">1500 Pont</strong>
+            <span style="font-size: 0.88rem; color: var(--color-text-muted);">Ingyenes Safe Lézer Kezelés Alkalom</span>
           </div>
         </div>
       </div>
@@ -607,17 +640,17 @@
   </main>
 
   <!-- 24/7 Online Booking Modal Overlay -->
-  <div id="booking-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center; padding: 1.5rem;">
-    <div style="background: var(--color-bg-card); max-width: 600px; width: 100%; border-radius: var(--border-radius-lg); padding: 2.5rem; position: relative; max-height: 90vh; overflow-y: auto; border: 1px solid var(--color-border-gold); box-shadow: var(--shadow-hover);">
-      <button id="close-booking-modal" style="position: absolute; top: 1.2rem; right: 1.2rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-text-muted);">&times;</button>
+  <div id="booking-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center; padding: 1.5rem;">
+    <div style="background: var(--color-bg-card); max-width: 620px; width: 100%; border-radius: var(--border-radius-lg); padding: 2.8rem 2.5rem; position: relative; max-height: 90vh; overflow-y: auto; border: 1px solid var(--color-border-gold); box-shadow: var(--shadow-hover);">
+      <button id="close-booking-modal" style="position: absolute; top: 1.2rem; right: 1.2rem; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--color-text-muted);">&times;</button>
 
       <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--color-primary-dark); font-weight: 700;">24/7 Auto-Emlékeztetős Naptár</span>
-      <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin: 0.4rem 0 1.5rem 0; color: var(--color-text-main);">Időpontfoglalás – Clear Kozmetika</h3>
+      <h3 style="font-family: var(--font-heading); font-size: 1.9rem; margin: 0.4rem 0 1.5rem 0; color: var(--color-text-main);">Időpontfoglalás – Clear Kozmetika</h3>
 
       <form id="booking-form" style="display: flex; flex-direction: column; gap: 1.2rem;">
         <div>
           <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Választott Kezelés</label>
-          <select id="booking-service-select" style="width: 100%; padding: 0.8rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
+          <select id="booking-service-select" style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
             <option value="Fasciális Arcterápia S.O.S (15 000 Ft)">Fasciális Arcterápia S.O.S (15 000 Ft)</option>
             <option value="Fasciális Arcterápia Arany Csomag (85 000 Ft / 4 alk.)">Fasciális Arcterápia Arany Csomag (85 000 Ft / 4 alk.)</option>
             <option value="HIEMT Elektromágneses Alakformálás (90 000 Ft / 6 alk.)">HIEMT Elektromágneses Alakformálás (90 000 Ft / 6 alk.)</option>
@@ -631,11 +664,11 @@
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
           <div>
             <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Kívánt Dátum</label>
-            <input type="date" id="booking-date-input" required style="width: 100%; padding: 0.8rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
+            <input type="date" id="booking-date-input" required style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
           </div>
           <div>
             <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Idősáv</label>
-            <select id="booking-time-input" style="width: 100%; padding: 0.8rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
+            <select id="booking-time-input" style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
               <option value="09:00">09:00</option>
               <option value="11:00">11:00</option>
               <option value="14:00">14:00</option>
@@ -646,17 +679,17 @@
 
         <div>
           <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Teljes Név</label>
-          <input type="text" id="booking-name-input" placeholder="Minta Katalin" required style="width: 100%; padding: 0.8rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
+          <input type="text" id="booking-name-input" placeholder="Minta Katalin" required style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
           <div>
             <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Telefonszám (SMS emlékeztetőhöz)</label>
-            <input type="tel" id="booking-phone-input" placeholder="+36 30 123 4567" required style="width: 100%; padding: 0.8rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
+            <input type="tel" id="booking-phone-input" placeholder="+36 30 123 4567" required style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
           </div>
           <div>
             <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">E-mail cím</label>
-            <input type="email" id="booking-email-input" placeholder="katalin@example.com" required style="width: 100%; padding: 0.8rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
+            <input type="email" id="booking-email-input" placeholder="katalin@example.com" required style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit;">
           </div>
         </div>
 
@@ -685,8 +718,8 @@
           <li><a href="#aniko-portre">Kelemen Anikó Rólam</a></li>
           <li><a href="#filozofia">Filozófiánk</a></li>
           <li><a href="#szolgaltatasok">Szolgáltatási Mátrix</a></li>
-          <li><a href="#borapolas-quiz">Bőrápolási Quiz</a></li>
-          <li><a href="#ajandekutalvany">Ajándékutalvány</a></li>
+          <li><a href="#borapolas-quiz">Bőrápolási Quiz 2.0</a></li>
+          <li><a href="#ajandekutalvany">3D Ajándékutalvány</a></li>
         </ul>
       </div>
 
