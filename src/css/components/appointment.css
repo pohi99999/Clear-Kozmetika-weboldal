@@ -1,32 +1,57 @@
-/* Appointment Teaser Component Styles */
+/* Appointment Teaser Component Styles - Clear Kozmetika */
 .appointment-section {
-  padding: 6rem 2rem;
+  padding: 7rem 2rem;
   background: var(--color-bg-main);
   text-align: center;
+  position: relative;
 }
 
 .appointment-card {
-  max-width: 900px;
+  max-width: 950px;
   margin: 0 auto;
-  background: linear-gradient(135deg, rgba(74, 107, 93, 0.08), rgba(212, 175, 55, 0.08));
+  background: linear-gradient(135deg, rgba(74, 107, 93, 0.09), rgba(212, 175, 55, 0.09));
   border: 1px solid var(--color-border-gold);
   border-radius: var(--border-radius-lg);
-  padding: 4rem 3rem;
+  padding: 4.5rem 3.5rem;
   box-shadow: var(--shadow-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.appointment-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
 }
 
 .appointment-title {
   font-family: var(--font-heading);
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
   color: var(--color-text-main);
+  line-height: 1.2;
 }
 
 .appointment-desc {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--color-text-muted);
-  margin-bottom: 2.5rem;
-  max-width: 650px;
+  margin-bottom: 2.8rem;
+  max-width: 680px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .appointment-card {
+    padding: 3rem 1.8rem;
+  }
+
+  .appointment-title {
+    font-size: 2.2rem;
+  }
 }

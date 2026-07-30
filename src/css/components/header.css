@@ -1,4 +1,4 @@
-/* Header & Navigation Styles */
+/* Header & Navigation Styles - Clear Kozmetika */
 .site-header {
   position: fixed;
   top: 0;
@@ -10,6 +10,12 @@
   -webkit-backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid var(--color-border);
   transition: var(--transition-normal);
+}
+
+.site-header.scrolled {
+  background: rgba(251, 248, 245, 0.95);
+  box-shadow: var(--shadow-subtle);
+  padding: 0.2rem 0;
 }
 
 .header-container {
@@ -26,6 +32,11 @@
   flex-direction: column;
   text-decoration: none;
   color: var(--color-text-main);
+  transition: var(--transition-fast);
+}
+
+.brand-logo:hover {
+  transform: scale(1.02);
 }
 
 .logo-main {
@@ -33,27 +44,30 @@
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 2px;
-  color: var(--color-text-main);
+  background: linear-gradient(135deg, var(--color-text-main), #333333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-transform: uppercase;
 }
 
 .logo-sub {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 3px;
   color: var(--color-primary-dark);
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
+  margin-top: -2px;
 }
 
 .main-nav {
   display: flex;
-  gap: 2rem;
+  gap: 1.8rem;
   align-items: center;
 }
 
 .nav-link {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: var(--color-text-main);
   text-decoration: none;
@@ -68,11 +82,18 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0%;
   height: 2px;
-  background: var(--color-primary);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
   transition: var(--transition-fast);
+  border-radius: 2px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-primary-dark);
 }
 
 .nav-link:hover::after,
@@ -83,28 +104,37 @@
 .nav-cta {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: var(--color-text-main);
-  padding: 0.6rem 1.4rem;
+  padding: 0.65rem 1.5rem;
   border-radius: var(--border-radius-pill);
   font-weight: 600;
   text-decoration: none;
   font-size: 0.85rem;
   letter-spacing: 1px;
-  box-shadow: var(--shadow-subtle);
-  transition: var(--transition-fast);
+  box-shadow: var(--shadow-gold);
+  transition: var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-cta:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.45);
 }
 
 .mobile-menu-btn {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
   color: var(--color-text-main);
+  padding: 0.5rem;
+  transition: var(--transition-fast);
+}
+
+.mobile-menu-btn:hover {
+  color: var(--color-primary-dark);
 }
 
 @media (max-width: 992px) {
@@ -118,11 +148,15 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--color-bg-card);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--color-border);
     flex-direction: column;
     padding: 2rem;
-    gap: 1.5rem;
+    gap: 1.2rem;
     box-shadow: var(--shadow-medium);
+    animation: fadeIn 0.3s ease forwards;
   }
 
   .main-nav.active {

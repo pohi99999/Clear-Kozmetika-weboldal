@@ -46,13 +46,17 @@ A `Z:\001_Workspace\Hetenyi_Reni\` kozmetikai weboldal átfogó elemzése alapj�
 
 ## 4. Projekt Állapota & Munkamenetek Naplója
 
-### [2026-07-30] - 2. Fázis: Mappaszerkezet, Design System & HTML Alapváz
+### [2026-07-30] - 3. Fázis: Vizuális Arculat & CSS Komponensek Teljes Kidolgozása
 - **Elvégzett feladatok:**
-  - Moduláris könyvtárstruktúra felállítása (`src/css/`, `src/css/components/`, `src/js/`, `src/js/modules/`, `src/assets/`, `api/`).
-  - Clear Kozmetika egyedi Design System és CSS változók kódolása (`src/css/variables.css`: Champagne Gold, Soft Beige, Bio Leaf Green, Terracotta, Deep Charcoal tónusok, glassmorphic effektusok, Playfair Display & Montserrat tipográfia).
-  - Moduláris CSS komponensek elkészítése (`header.css`, `hero.css`, `brand-split.css`, `services.css`, `calculator.css`, `giftcard.css`, `appointment.css`, `footer.css`).
-  - Fő stíluslap (`src/css/style.css`) és JavaScript modulok belépési pontjainak (`main.js`, `quiz.js`, `booking.js`, `giftcard.js`, `loyalty.js`) elkészítése.
-  - Szemantikus, SEO-re és helyi Pécs-Donátus lokációra optimalizált `index.html` váz elkészítése OpenGraph és Google Fonts beágyazással.
+  - Design tokens és globális keyframe animációk (`floatAnimation`, `pulseGlow`, `fadeIn`) finomítása a `variables.css`-ben.
+  - Komponens stílusok teljes kidolgozása a `src/css/components/` könyvtárban:
+    - `header.css`: Áttetsző glassmorphism navigáció, ragyogó champagne-arany CTA, hover mikro-interakciók és reszponzív menü.
+    - `hero.css`: Impozáns vizuális szakasz gradient háttérrel, Playfair Display tipográfiával, lebegő statisztikai kártyákkal (`floatAnimation`).
+    - `brand-split.css`: Kétoszlopos interaktív kártyadizájn a Bio Holisztika (zöld/terrakotta) és az Orvos-Esztétika (champagne/charcoal) pillérek megkülönböztetésére.
+    - `services.css`: Szolgáltatás kártyák reszponzív grid elrendezésben, árazás és bérlet jelvények kiemelésével.
+    - `calculator.css`, `giftcard.css`, `appointment.css`: Elegáns moduláris kártyák és CTA blokkok a 4 fő funkcióhoz.
+    - `footer.css`: Sötét tónusú elegáns lábléc a Pécs-Donátus lokációval, nyitvatartással és elérhetőségekkel.
+  - Fő stíluslap (`src/css/style.css`) konszolidálása az összes komponens importjával és globális reset-ekkel.
 - **Következő lépések:**
-  - Az interaktív bőrápolási kérdőív és szolgáltatás-választó modul működési logikájának kidolgozása.
-  - Digitális ajándékutalvány rendelő és VIP hűségpont backend/frontend modulok megvalósítása.
+  - A funkcionális JavaScript modulok (`quiz.js`, `booking.js`, `giftcard.js`, `loyalty.js`) megírása és interaktív bekötése.
+  - Serverless API funkciók felállítása a Vercel/Node.js háttérhez.
