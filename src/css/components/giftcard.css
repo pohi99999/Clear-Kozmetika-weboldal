@@ -1,0 +1,45 @@
+/* Giftcard Component Styles */
+.giftcard-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, var(--color-bg-dark), #2A2A2A);
+  color: var(--color-text-light);
+}
+
+.giftcard-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.giftcard-preview {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.giftcard-brand {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--color-primary-light);
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.giftcard-amount {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 992px) {
+  .giftcard-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,85 @@
+/* Services Section Styles */
+.services-section {
+  padding: 6rem 2rem;
+  background: var(--color-bg-alt);
+}
+
+.services-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--color-bg-card);
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--color-border);
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--color-border-gold);
+}
+
+.service-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.service-name {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-text-main);
+  margin-bottom: 0.8rem;
+}
+
+.service-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.service-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--color-border);
+}
+
+.service-price {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.service-btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition-fast);
+}
+
+.service-btn:hover {
+  color: var(--color-text-main);
+  transform: translateX(3px);
+}

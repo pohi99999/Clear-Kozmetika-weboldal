@@ -1,0 +1,55 @@
+:root {
+  /* Color Palette - Luxury & Holistic Dual Identity */
+  --color-primary: #D4AF37;           /* Champagne Gold */
+  --color-primary-light: #E5C158;     /* Light Gold Accent */
+  --color-primary-dark: #B59328;      /* Deep Gold Accent */
+  
+  --color-secondary: #4A6B5D;        /* Bio Leaf Green - Holistic Nature */
+  --color-secondary-light: #6E8B7D;  /* Soft Sage / Bio Green */
+  --color-terracotta: #C88A75;       /* Warm Terracotta / Clay Accent */
+
+  --color-bg-main: #FBF8F5;          /* Soft Beige Canvas */
+  --color-bg-alt: #F3EEE7;           /* Warm Sand Alt Background */
+  --color-bg-card: #FFFFFF;          /* Pure White Card Background */
+  --color-bg-dark: #1A1A1A;          /* Deep Charcoal Dark Mode / Footer */
+
+  --color-text-main: #1A1A1A;        /* Deep Charcoal for maximum contrast */
+  --color-text-muted: #5A5A5A;       /* Muted Body Text */
+  --color-text-light: #FFFFFF;       /* Light Text on Dark BG */
+
+  --color-border: rgba(26, 26, 26, 0.1);
+  --color-border-gold: rgba(212, 175, 55, 0.3);
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 1rem;     /* 16px */
+  --spacing-md: 2rem;     /* 32px */
+  --spacing-lg: 4rem;     /* 64px */
+  --spacing-xl: 7rem;     /* 112px */
+
+  /* Layout & Borders */
+  --max-width: 1280px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-pill: 50px;
+
+  /* Elevation & Shadows */
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.25);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(251, 248, 245, 0.85);
+  --glass-bg-dark: rgba(26, 26, 26, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-blur: blur(12px);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s ease;
+}

@@ -46,12 +46,13 @@ A `Z:\001_Workspace\Hetenyi_Reni\` kozmetikai weboldal átfogó elemzése alapj�
 
 ## 4. Projekt Állapota & Munkamenetek Naplója
 
-### [2026-07-30] - Projekt Inicializálás & Referencia Elemzés
+### [2026-07-30] - 2. Fázis: Mappaszerkezet, Design System & HTML Alapváz
 - **Elvégzett feladatok:**
-  - `AGENT.md` struktúra létrehozása a Clear Kozmetika (Kelemen Anikó) projekthez.
-  - A `Z:\001_Workspace\Hetenyi_Reni\` referencia projekt részletes elemzése (architektúra, backend API, CSS komponensek, PDF generálás, Firebase integráció).
-  - Git repository inicializálása a `Z:\001_Workspace\Clear Kozmetika (Kelemen Anikó)` könyvtárban.
-  - Remote origin beállítása (`https://github.com/pohi99999/Clear-Kozmetika-weboldal.git`).
-  - Initial commit és push a `main` ágra.
+  - Moduláris könyvtárstruktúra felállítása (`src/css/`, `src/css/components/`, `src/js/`, `src/js/modules/`, `src/assets/`, `api/`).
+  - Clear Kozmetika egyedi Design System és CSS változók kódolása (`src/css/variables.css`: Champagne Gold, Soft Beige, Bio Leaf Green, Terracotta, Deep Charcoal tónusok, glassmorphic effektusok, Playfair Display & Montserrat tipográfia).
+  - Moduláris CSS komponensek elkészítése (`header.css`, `hero.css`, `brand-split.css`, `services.css`, `calculator.css`, `giftcard.css`, `appointment.css`, `footer.css`).
+  - Fő stíluslap (`src/css/style.css`) és JavaScript modulok belépési pontjainak (`main.js`, `quiz.js`, `booking.js`, `giftcard.js`, `loyalty.js`) elkészítése.
+  - Szemantikus, SEO-re és helyi Pécs-Donátus lokációra optimalizált `index.html` váz elkészítése OpenGraph és Google Fonts beágyazással.
 - **Következő lépések:**
-  - Projekt alapszerkezet (frontend HTML/CSS/JS, serverless API mappák, `.gitignore`, `.env.example`, `package.json`) felállítása a Hetenyi_Reni referenciája alapján.
+  - Az interaktív bőrápolási kérdőív és szolgáltatás-választó modul működési logikájának kidolgozása.
+  - Digitális ajándékutalvány rendelő és VIP hűségpont backend/frontend modulok megvalósítása.

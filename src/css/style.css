@@ -1,0 +1,52 @@
+/* Main Stylesheet for Clear Kozmetika (Kelemen Anikó) */
+
+/* 1. Design System & CSS Variables */
+@import url('./variables.css');
+
+/* 2. Component Styles */
+@import url('./components/header.css');
+@import url('./components/hero.css');
+@import url('./components/brand-split.css');
+@import url('./components/services.css');
+@import url('./components/calculator.css');
+@import url('./components/giftcard.css');
+@import url('./components/appointment.css');
+@import url('./components/footer.css');
+
+/* 3. Global CSS Resets & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}

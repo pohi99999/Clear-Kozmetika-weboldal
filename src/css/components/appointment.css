@@ -1,0 +1,32 @@
+/* Appointment Teaser Component Styles */
+.appointment-section {
+  padding: 6rem 2rem;
+  background: var(--color-bg-main);
+  text-align: center;
+}
+
+.appointment-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(74, 107, 93, 0.08), rgba(212, 175, 55, 0.08));
+  border: 1px solid var(--color-border-gold);
+  border-radius: var(--border-radius-lg);
+  padding: 4rem 3rem;
+  box-shadow: var(--shadow-medium);
+}
+
+.appointment-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-main);
+}
+
+.appointment-desc {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}

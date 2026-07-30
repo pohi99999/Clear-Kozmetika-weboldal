@@ -1,0 +1,62 @@
+/* Interactive Quiz / Calculator Component Styles */
+.calculator-section {
+  padding: 6rem 2rem;
+  background: var(--color-bg-main);
+}
+
+.calculator-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--color-bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 3rem;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--color-border-gold);
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quiz-step-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.quiz-option-btn {
+  background: var(--color-bg-alt);
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-md);
+  padding: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: var(--font-body);
+}
+
+.quiz-option-btn:hover,
+.quiz-option-btn.selected {
+  border-color: var(--color-primary);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.quiz-option-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text-main);
+  margin-bottom: 0.3rem;
+}
+
+.quiz-option-desc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
