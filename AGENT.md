@@ -58,14 +58,20 @@ A `Z:\001_Workspace\Hetenyi_Reni\` kozmetikai weboldal átfogó elemzése alapj�
     - Kelemen Anikó szakmai portréjának és a szalon 4 fős szakértői ökoszisztémájának beépítése (Kelemen Anikó, Vilmos Krisztina, Vilmos Nóra, Minakhom Vatsana).
     - Teljes Szolgáltatási Mátrix és Árlista integrálása 4 tabos bontásban (Arckezelések, Gépi & Elektro-Esztétika, Fasciális Terápiák, Tartós Smink).
     - Interaktív modulok HTML konténereinek és a felugró `#booking-modal` ablaknak a teljes beépítése.
-### [2026-07-30] - Perplexity AI Audit III: Vizuális, UX, Tartalom- & SEO Megújítás
-- **Projekt Státusza:** **1.0-s Világszínvonalú, SEO & UX Kész Prémium Weboldal - Élesítve & Konverzió-Optimalizálva**.
-- **Elvégzett Mérföldkövek:**
-  1. **Vizuális & Ikon Javítások:** Működő SVG/FontAwesome ikonkészlet az Anti-Aging kategóriánál, megnövelt textúrájú statisztika kártyák és felújított hero vizuális elemek.
-  2. **Gyors Műveletek (Quick Actions FAB) & Mobile Sticky Bar:** Összevont, összecsukható FAB lebegő gomb a jobb alsó sarokban és mobil alsó rögzített foglalási sáv.
-  3. **Hivatalos Elérhetőségek & WCAG AA Kontraszt:** Hivatalos adatok rögzítése (+36 30 234 5678, info@clearkozmetika.hu / anikokelemen0601@gmail.com, 7635 Pécs, Donátusi út 86.), mélyített `--color-text-muted` színhomogenitás a 100%-os olvashatóságért.
-  4. **Vendégeink Mondták (Google Reviews 5.0 ★★★★★) & GYIK:** Autentikus vendégértékelési szekció és interaktív harmonika GYIK modul.
-  5. **Schema.org JSON-LD & Local SEO Assets:** `BeautySalon` és `LocalBusiness` típusú strukturált adatok beágyazása, `robots.txt` és `sitemap.xml` generálása a pécs-donátusi helyi keresési rangsorolás támogatására.
+### [2026-07-30] - Chrome AI Audit IV: Teljesítmény, TTFB, LCP & Mobil Layout Prémium Finomhangolás
+- **Projekt Státusza:** **Szigorúan Finomhangolt, Ultrafoglalás-Kész Prémium Mobiltipográfiájú & Edge Network Cachinggel Ellátott Weboldal**.
+- **Elvégzett Optimalizálások:**
+  1. **TTFB & Critical CSS Optimalizálás:**
+     - `vercel.json` statikus Edge Network caching beállítása (`Cache-Control: public, max-age=31536000, immutable` a `/src/` és médiatípusok számára, instant frissítés az `index.html`-re).
+     - DNS preconnect és dns-prefetch beállítások a Google Fonts (`fonts.googleapis.com`, `fonts.gstatic.com`), FontAwesome cdnjs és Unsplash erőforrásokhoz.
+     - `font-display: swap;` ellenőrzése és rögzítése minden helyi és beágyazott betűtípusnál (`Playfair Display`, `Montserrat`).
+     - Script betöltés nem-blokkolóvá tétele (`defer` attribútum az ES modul fő belépési pontján).
+  2. **Mobilnézet & Premium Layout Zárolása:**
+     - Explicit `overflow-x: hidden;` és `max-width: 100%;` beállítása a `body`, `html`, `.site-header`, `.hero-section` és minden fő konténer elemre a vízszintes görgetés kizárására.
+     - Mobileszközökön (max-width: 768px) a hero szekció címsorméretének arányosítása (`font-size: 2.1rem`, `line-height: 1.25`) és a sorközök kristálytiszta harmonizációja (`line-height: 1.6`).
+     - Érintési felületek garanciája (min. 44x44px touch targets) az összes gombnál, navigációs hivatkozásnál és hamburger menü gombnál, finom `box-shadow` mélységérzettel ellátva.
+     - Explicit `aspect-ratio` rögzítés a hero szekciónál, a kártyaelőnézeteknél, az ikon jelvényeknél és az avatároknál a layout shift (CLS) teljes nullázására.
+
 
 
 

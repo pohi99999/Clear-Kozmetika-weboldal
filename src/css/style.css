@@ -1,10 +1,18 @@
-/* Non-Critical Component Styles for Clear Kozmetika */
+/* Non-Critical Component Styles & Global Layout Refinement */
 @import url('./components/brand-split.css');
 @import url('./components/services.css');
 @import url('./components/calculator.css');
 @import url('./components/giftcard.css');
 @import url('./components/appointment.css');
 @import url('./components/footer.css');
+
+html, body, main, section, footer, header, div {
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
 
 /* Quick Actions FAB (Floating Action Button) */
 .quick-actions-fab {
@@ -21,6 +29,9 @@
 .fab-main-btn {
   width: 58px;
   height: 58px;
+  min-width: 48px;
+  min-height: 48px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: var(--color-text-main);
@@ -76,6 +87,7 @@
   box-shadow: var(--shadow-medium);
   transition: transform 0.2s ease, background 0.2s ease;
   white-space: nowrap;
+  min-height: 44px;
 }
 
 .fab-action-item:hover {
@@ -120,6 +132,7 @@
 .mobile-sticky-sub {
   font-size: 0.75rem;
   color: var(--color-text-muted);
+  line-height: 1.6;
 }
 
 .mobile-sticky-btn {
@@ -130,7 +143,11 @@
   font-weight: 700;
   font-size: 0.85rem;
   text-decoration: none;
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -139,6 +156,9 @@
   }
   .quick-actions-fab {
     bottom: 75px;
+  }
+  body, p, span, div, input, select, textarea, button {
+    line-height: 1.6;
   }
 }
 
@@ -196,6 +216,8 @@
 .author-avatar {
   width: 46px;
   height: 46px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
   color: white;
