@@ -50,9 +50,16 @@
   overflow-wrap: break-word;
 }
 
+.hero-section,
+.hero-section * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
   padding: 0.55rem 1.5rem;
   background: var(--glass-bg);
@@ -66,9 +73,11 @@
   margin-bottom: 1.8rem;
   letter-spacing: 1px;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
-  max-width: 100%;
-  box-sizing: border-box;
+  max-width: 90vw !important;
+  box-sizing: border-box !important;
   word-break: break-word;
+  white-space: normal !important;
+  text-align: center;
 }
 
 .hero-badge i {
@@ -269,6 +278,12 @@
     padding: 7.5rem 1.2rem 4rem 1.2rem;
     min-height: auto;
     aspect-ratio: auto;
+  }
+
+  .hero-badge {
+    white-space: normal !important;
+    text-align: center !important;
+    max-width: 90vw !important;
   }
 
   .hero-title {

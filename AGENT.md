@@ -83,7 +83,13 @@ A `Z:\001_Workspace\Hetenyi_Reni\` kozmetikai weboldal átfogó elemzése alapj�
      - A `.hero-section`, `.hero-content` és `.hero-title` elemeknél biztonsági margó rögzítve: `padding-left: 1.25rem; padding-right: 1.25rem; box-sizing: border-box; max-width: 100%;`.
      - Jobb szélen túllógó szövegek és törések megelőzése: `word-break: break-word; overflow-wrap: break-word;` Galaxy S25 Ultra és nagy felbontású mobil kijelzőkön.
 
-
-
-
-
+### [2026-07-30] - Radikális Mobilmenü Full-Screen Overlay & Hero Vízszintes Scroll Fix
+- **Elvégzett radikális gyökérok-szintű layout javítások:**
+  1. **Mobilmenü Teljes Átalakítása (`src/css/components/header.css`, `src/js/main.js` & `index.html` inline CSS):**
+     - Megszüntetve a `.site-header` 70px-es magassági korlátozása általi menü-levágás: megnyitáskor a `.site-header` explicit `overflow: visible !important;` és `backdrop-filter: none !important;` beállítást kap.
+     - Törzs szintű (body-wide) kiterjedésű full-screen fixed overlay rögzítve a `.main-nav.active` / `.main-nav.is-active` / `.nav-menu.is-active` osztályokon: `position: fixed !important; top: 0 !important; left: 0 !important; width: 100vw !important; height: 100vh !important; background: #1A1A1A !important; z-index: 99999 !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; overflow-y: auto !important;`.
+     - `.mobile-menu-btn` `z-index: 100000 !important;` kiemelése a bezáró ikon folyamatos és akadálytalan eléréséhez.
+  2. **Hero Szekció & Horizontális Scroll Kilógás Fix (`src/css/components/hero.css`, `src/css/style.css` & `index.html` inline CSS):**
+     - `.hero-badge` (Holisztikus Bio & Orvos-Esztétikai Szalon jelvény) szövegénél engedélyezve a tetszőleges törés mobilon: `white-space: normal !important; text-align: center !important; max-width: 90vw !important; box-sizing: border-box !important; word-break: break-word;`.
+     - Hero szekció minden elemére rögzítve: `max-width: 100% !important; box-sizing: border-box !important;`.
+     - Szigorú globális elrendezés zárolása a `html, body` elemeken: `width: 100% !important; max-width: 100vw !important; overflow-x: hidden !important; position: relative;`.

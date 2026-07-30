@@ -37,12 +37,24 @@ function initHeader() {
 function initMobileMenu() {
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mainNav = document.getElementById('main-nav');
+  const siteHeader = document.querySelector('.site-header');
 
   if (mobileMenuBtn && mainNav) {
     mobileMenuBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       const isActive = mainNav.classList.toggle('active');
+      mainNav.classList.toggle('is-active', isActive);
       mobileMenuBtn.classList.toggle('active', isActive);
+
+      if (siteHeader) {
+        siteHeader.classList.toggle('nav-active', isActive);
+        if (isActive) {
+          siteHeader.style.setProperty('overflow', 'visible', 'important');
+        } else {
+          siteHeader.style.removeProperty('overflow');
+        }
+      }
+
       document.body.style.overflow = isActive ? 'hidden' : '';
 
       const icon = mobileMenuBtn.querySelector('i');
@@ -53,8 +65,12 @@ function initMobileMenu() {
 
     mainNav.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
       link.addEventListener('click', () => {
-        mainNav.classList.remove('active');
+        mainNav.classList.remove('active', 'is-active');
         mobileMenuBtn.classList.remove('active');
+        if (siteHeader) {
+          siteHeader.classList.remove('nav-active');
+          siteHeader.style.removeProperty('overflow');
+        }
         document.body.style.overflow = '';
         const icon = mobileMenuBtn.querySelector('i');
         if (icon) icon.className = 'fa-solid fa-bars';
