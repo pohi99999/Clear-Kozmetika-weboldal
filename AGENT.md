@@ -58,11 +58,11 @@ A `Z:\001_Workspace\Hetenyi_Reni\` kozmetikai weboldal átfogó elemzése alapj�
     - Kelemen Anikó szakmai portréjának és a szalon 4 fős szakértői ökoszisztémájának beépítése (Kelemen Anikó, Vilmos Krisztina, Vilmos Nóra, Minakhom Vatsana).
     - Teljes Szolgáltatási Mátrix és Árlista integrálása 4 tabos bontásban (Arckezelések, Gépi & Elektro-Esztétika, Fasciális Terápiák, Tartós Smink).
     - Interaktív modulok HTML konténereinek és a felugró `#booking-modal` ablaknak a teljes beépítése.
-### [2026-07-30] - Hűha-Faktor & Világszínvonal Vizuális Frissítés
-- **Projekt Státusza:** **1.0-s Világszínvonalú Prémium Prototípus - Élesítve & Felkészítve a Vercel Élesítési és Bemutató Fázisra**.
-- **Új Vizuális & Interaktív Fejlesztések:**
-  1. **Brand-Split Interaktív Csúszka / Switcher:** Dynamic mode selector (`data-split="all"`, `data-split="bio"`, `data-split="tech"`) finom dimming/focus kiemeléssel és vizuális háttérképekkel a Holisztikus Bio és az Orvos-Esztétika szinergiájára.
-  2. **3D Interaktív Ajándékutalvány:** Egér- és érintéskövető 3D Tilt/Gyro hatás (`transform: perspective(1000px) rotateX/Y`), aranyfólia csillogás (`giftcard-preview::after` sheen animation) és valós idejű gépelési visszajelzés (`triggerGlow`).
-  3. **Visual Skin Diagnostics 2.0 & Personal Skin Care Pass:** Vizuális ikonos kártyák, egyedi `CLEAR-PASS-XXXX` digitális kártya generálása és 1-kattintásos pre-selected időpontfoglalás.
-  4. **Scroll Reveal Animációk & Premium Visual Tuning:** `IntersectionObserver` alapú gördülési beúszás (`.reveal-on-scroll.is-visible`), nagyfelbontású Unsplash kozmetikai háttérképek és lágy arany/sötét overlay gradients.
+### [2026-07-30] - Teljesítmény-Optimalizálás & Lighthouse / Core Web Vitals Tuning
+- **Projekt Státusza:** **1.0-s Világszínvonalú, Maximálisan Optimalizált Prémium Prototípus**.
+- **Elvégzett Optimalizálások:**
+  1. **Renderelést Blokkoló CSS Megszüntetése:** A kritikus "Above-the-fold" stílusok (variables tokenek, reset-ek, header, hero) beágyazása közvetlenül az `index.html` `<head>` részébe egy inlined `<style>` blokkba. A nem kritikus stíluslapok aszinkron előtöltése (`rel="preload" as="style" onload="..."`).
+  2. **Google Fonts & Third-Party Optimizáció:** `&display=swap` direktíva a betűvillogás (FOUT) megelőzésére, `preconnect` kapcsolatok felállítása (`fonts.googleapis.com`, `fonts.gstatic.com`). FontAwesome aszinkron betöltése.
+  3. **Layout Shift (CLS) Megelőzése:** Explicit képméretezések, `loading="lazy"` és `decoding="async"` alkalmazása.
+
 
