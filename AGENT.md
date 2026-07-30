@@ -46,17 +46,18 @@ A `Z:\001_Workspace\Hetenyi_Reni\` kozmetikai weboldal átfogó elemzése alapj�
 
 ## 4. Projekt Állapota & Munkamenetek Naplója
 
-### [2026-07-30] - 3. Fázis: Vizuális Arculat & CSS Komponensek Teljes Kidolgozása
+### [2026-07-30] - 4. Fázis: Interaktív JS Modulok & Gazdag HTML Tartalom
 - **Elvégzett feladatok:**
-  - Design tokens és globális keyframe animációk (`floatAnimation`, `pulseGlow`, `fadeIn`) finomítása a `variables.css`-ben.
-  - Komponens stílusok teljes kidolgozása a `src/css/components/` könyvtárban:
-    - `header.css`: Áttetsző glassmorphism navigáció, ragyogó champagne-arany CTA, hover mikro-interakciók és reszponzív menü.
-    - `hero.css`: Impozáns vizuális szakasz gradient háttérrel, Playfair Display tipográfiával, lebegő statisztikai kártyákkal (`floatAnimation`).
-    - `brand-split.css`: Kétoszlopos interaktív kártyadizájn a Bio Holisztika (zöld/terrakotta) és az Orvos-Esztétika (champagne/charcoal) pillérek megkülönböztetésére.
-    - `services.css`: Szolgáltatás kártyák reszponzív grid elrendezésben, árazás és bérlet jelvények kiemelésével.
-    - `calculator.css`, `giftcard.css`, `appointment.css`: Elegáns moduláris kártyák és CTA blokkok a 4 fő funkcióhoz.
-    - `footer.css`: Sötét tónusú elegáns lábléc a Pécs-Donátus lokációval, nyitvatartással és elérhetőségekkel.
-  - Fő stíluslap (`src/css/style.css`) konszolidálása az összes komponens importjával és globális reset-ekkel.
+  - **JavaScript modulok kódolása (`src/js/modules/`):**
+    - `quiz.js`: Interaktív Bőrápolási Rutin Kérdőív és Szolgáltatás-választó logika személyre szabott kezelés- és natúr termékajánlással.
+    - `giftcard.js`: Névreszóló Digitális Ajándékutalvány testreszabó élő kártyaelőnézet frissítéssel (összeg, címzett, feladó, üzenet).
+    - `booking.js`: 24/7 Online Időpontfoglaló modal felugró ablak logika, időpontválasztó, űrlapkezelés és automatikus emlékeztető szimuláció.
+    - `loyalty.js`: VIP Törzsvendég Hűségpont Rendszer pontkalkulátor és szintbeváltó előnézet (Bronz, Ezüst, Arany, Gyémánt szint).
+    - `main.js`: Modulok inicializálása, reszponzív menü toggle, scrolled header hatás és szolgáltatás-mátrix tabos váltólogika.
+  - **HTML Tartalom Teljes Expaniója (`index.html`):**
+    - Kelemen Anikó szakmai portréjának és a szalon 4 fős szakértői ökoszisztémájának beépítése (Kelemen Anikó, Vilmos Krisztina, Vilmos Nóra, Minakhom Vatsana).
+    - Teljes Szolgáltatási Mátrix és Árlista integrálása 4 tabos bontásban (Arckezelések, Gépi & Elektro-Esztétika, Fasciális Terápiák, Tartós Smink).
+    - Interaktív modulok HTML konténereinek és a felugró `#booking-modal` ablaknak a teljes beépítése.
 - **Következő lépések:**
-  - A funkcionális JavaScript modulok (`quiz.js`, `booking.js`, `giftcard.js`, `loyalty.js`) megírása és interaktív bekötése.
-  - Serverless API funkciók felállítása a Vercel/Node.js háttérhez.
+  - Vercel Serverless Node.js API funkciók kidolgozása a backend műveletekhez (`api/voucher.js`, `api/loyalty.js`, `api/booking-webhook.js`).
+  - Végső tesztelés, SEO ellenőrzés és élesíthetőség.
