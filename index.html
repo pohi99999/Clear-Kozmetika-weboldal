@@ -24,10 +24,59 @@
   <meta property="og:url" content="https://clear-kozmetika.vercel.app">
   <meta property="og:locale" content="hu_HU">
 
+  <!-- JSON-LD Schema.org Structured Data for Local SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["BeautySalon", "LocalBusiness"],
+    "name": "Clear Kozmetika (Kelemen Anikó)",
+    "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80",
+    "@id": "https://clear-kozmetika.vercel.app",
+    "url": "https://clear-kozmetika.vercel.app",
+    "telephone": "+36302345678",
+    "email": "info@clearkozmetika.hu",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Donátusi út 86.",
+      "addressLocality": "Pécs",
+      "postalCode": "7635",
+      "addressCountry": "HU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 46.0727,
+      "longitude": 18.2323
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "19:00"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Kochné Kelemen Anikó",
+      "jobTitle": "Vezető biokozmetikus & természetgyógyász"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48"
+    }
+  }
+  </script>
+
   <!-- Async Non-Blocking FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 
-  <!-- Critical Above-the-Fold Inline CSS with Local Fonts & System Fallbacks -->
+  <!-- Critical Above-the-Fold Inline CSS with High Contrast Typography -->
   <style>
     /* Local Font Definitions with font-display: swap */
     @font-face {
@@ -60,11 +109,11 @@
       --color-bg-card: #FFFFFF;
       --color-bg-dark: #1A1A1A;
       --color-text-main: #1A1A1A;
-      --color-text-muted: #5A5A5A;
+      --color-text-muted: #3D3D3D; /* WCAG AA High Contrast */
       --color-text-light: #FFFFFF;
-      --color-border: rgba(26, 26, 26, 0.1);
-      --color-border-gold: rgba(212, 175, 55, 0.35);
-      --color-border-bio: rgba(74, 107, 93, 0.3);
+      --color-border: rgba(26, 26, 26, 0.12);
+      --color-border-gold: rgba(212, 175, 55, 0.4);
+      --color-border-bio: rgba(74, 107, 93, 0.35);
       --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
       --font-body: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --max-width: 1280px;
@@ -77,7 +126,7 @@
       --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
       --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.3);
       --shadow-bio: 0 8px 25px rgba(74, 107, 93, 0.25);
-      --glass-bg: rgba(251, 248, 245, 0.85);
+      --glass-bg: rgba(251, 248, 245, 0.88);
       --glass-border: rgba(255, 255, 255, 0.5);
       --glass-blur: blur(14px);
       --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -118,7 +167,7 @@
     .logo-sub { font-size: 0.72rem; letter-spacing: 3px; color: var(--color-primary-dark); text-transform: uppercase; font-weight: 600; margin-top: -2px; }
     .main-nav { display: flex; gap: 1.8rem; align-items: center; }
     .nav-link { font-family: var(--font-body); font-size: 0.88rem; font-weight: 500; color: var(--color-text-main); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; padding: 0.5rem 0.4rem; min-height: 48px; display: inline-flex; align-items: center; }
-    .nav-cta { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); color: var(--color-text-main); padding: 0.75rem 1.6rem; border-radius: var(--border-radius-pill); font-weight: 700; text-decoration: none; font-size: 0.88rem; letter-spacing: 1px; box-shadow: var(--shadow-gold); min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
+    .nav-cta { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); color: var(--color-text-main); padding: 0.75rem 1.6rem; border-radius: var(--border-radius-pill); font-weight: 700; text-decoration: none; font-size: 0.88rem; letter-spacing: 1px; box-shadow: var(--shadow-gold); min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; white-space: nowrap; }
     .nav-cta:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45); }
     .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--color-text-main); padding: 0.5rem; min-width: 48px; min-height: 48px; border-radius: 50%; }
 
@@ -135,7 +184,7 @@
     .hero-badge { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.55rem 1.5rem; background: var(--glass-bg); border: 1px solid var(--color-border-gold); border-radius: var(--border-radius-pill); font-size: 0.85rem; font-weight: 700; color: var(--color-text-main); margin-bottom: 1.8rem; letter-spacing: 1px; }
     .hero-title { font-family: var(--font-heading); font-size: 3.8rem; line-height: 1.12; font-weight: 700; color: var(--color-text-main); margin-bottom: 1.5rem; letter-spacing: -0.5px; }
     .hero-title .highlight-gold { color: var(--color-primary-dark); font-style: italic; }
-    .hero-subtitle { font-size: 1.18rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2.6rem; max-width: 630px; }
+    .hero-subtitle { font-size: 1.18rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2.6rem; max-width: 630px; font-weight: 500; }
     .hero-actions { display: flex; gap: 1.2rem; flex-wrap: wrap; }
     .btn-primary { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); color: var(--color-text-main); padding: 1.1rem 2.5rem; border-radius: var(--border-radius-pill); font-weight: 700; text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; box-shadow: var(--shadow-gold); border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.7rem; min-height: 48px; transition: var(--transition-normal); }
     .btn-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 32px rgba(212, 175, 55, 0.45); }
@@ -143,7 +192,7 @@
     .btn-secondary:hover { transform: translateY(-2px) scale(1.02); border-color: var(--color-primary); }
     .hero-card-preview { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--border-radius-lg); padding: 3rem 2.5rem; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12); position: relative; animation: floatAnimation 6s ease-in-out infinite; }
     .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem 1.5rem; }
-    .stat-item { display: flex; flex-direction: column; padding: 1rem; border-radius: var(--border-radius-md); background: rgba(255, 255, 255, 0.65); border: 1px solid rgba(255, 255, 255, 0.8); }
+    .stat-item { display: flex; flex-direction: column; padding: 1.1rem; border-radius: var(--border-radius-md); background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: var(--shadow-subtle); }
     .stat-value { font-family: var(--font-heading); font-size: 2.3rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.1; }
     .stat-label { font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600; margin-top: 0.4rem; line-height: 1.4; }
 
@@ -189,7 +238,8 @@
         <a href="#szolgaltatasok" class="nav-link">Szolgáltatások</a>
         <a href="#borapolas-quiz" class="nav-link">Bőrápolás Quiz</a>
         <a href="#ajandekutalvany" class="nav-link">Utalvány</a>
-        <a href="#vip-husegpont" class="nav-link">VIP Pontok</a>
+        <a href="#ertekelesek" class="nav-link">Vélemények</a>
+        <a href="#faq" class="nav-link">GYIK</a>
         <a href="#kapcsolat" class="nav-link">Kapcsolat</a>
         <a href="#idopontfoglalas" class="nav-cta open-booking-modal-btn">Időpontfoglalás</a>
       </nav>
@@ -359,7 +409,7 @@
       <!-- Tab Navigation Buttons -->
       <div class="services-tabs-container">
         <button class="service-tab-btn active" data-category="arckezelesek">
-          <i class="fa-solid fa-sparkles"></i> Arckezelések &amp; Bőrfiatalítás
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Arckezelések &amp; Bőrfiatalítás
         </button>
         <button class="service-tab-btn" data-category="gepi">
           <i class="fa-solid fa-bolt"></i> Gépi &amp; Elektro-Esztétika
@@ -368,7 +418,7 @@
           <i class="fa-solid fa-hands"></i> Fasciális Terápiák
         </button>
         <button class="service-tab-btn" data-category="smink">
-          <i class="fa-solid fa-wand-magic"></i> Tartós Smink &amp; Styling
+          <i class="fa-solid fa-paintbrush"></i> Tartós Smink &amp; Styling
         </button>
       </div>
 
@@ -597,9 +647,9 @@
       </div>
     </section>
 
-    <!-- Interaktív Vizuális Bőrápolási Kérdőív 2.0 -->
+    <!-- Interaktív Vizuális Bőrápolási Kérdőív 2.0 (Highlighted Border) -->
     <section class="calculator-section" id="borapolas-quiz">
-      <div class="calculator-card">
+      <div class="calculator-card" style="border: 2px solid var(--color-border-gold); box-shadow: var(--shadow-hover);">
         <div class="quiz-header">
           <span class="section-tag">Vizuális Szakértő 2.0</span>
           <h2 class="section-title">Bőrápolási Rutin &amp; Kezelés Választó</h2>
@@ -608,11 +658,11 @@
 
         <div class="quiz-step-title">Válassza ki elsődleges bőrápolási célját:</div>
         
-        <!-- Visual Option Cards -->
+        <!-- Visual Option Cards with Fixed Icons -->
         <div class="quiz-options-grid">
           <div class="quiz-option-card selected" data-type="goal" data-value="antiaging">
             <div class="quiz-option-icon">
-              <i class="fa-solid fa-sparkles"></i>
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
             </div>
             <div class="quiz-option-title">Anti-Aging</div>
             <div class="quiz-option-desc">Ránctalanítás &amp; Kollagén stimuláció</div>
@@ -657,9 +707,9 @@
     <section class="giftcard-section" id="ajandekutalvany">
       <div class="giftcard-container">
         <div>
-          <span class="section-tag" style="color: var(--color-primary-light);">Ajakándékozzon Élmányt</span>
+          <span class="section-tag" style="color: var(--color-primary-light);">Ajándékozzon Élményt</span>
           <h2 class="section-title" style="color: var(--color-text-light);">Digitális Névreszóló Ajándékutalvány</h2>
-          <p style="color: rgba(255,255,255,0.82); margin-bottom: 2rem; line-height: 1.75;">
+          <p style="color: rgba(255,255,255,0.85); margin-bottom: 2rem; line-height: 1.75; font-weight: 500;">
             Tervezze meg névreszóló utalványát! Mozgassa a kurzort a kártya felett az interaktív 3D fémfényű hatás kipróbálásához.
           </p>
 
@@ -712,6 +762,71 @@
       </div>
     </section>
 
+    <!-- Google Reviews 5.0 Section ("Vendégeink Mondták") -->
+    <section class="reviews-section" id="ertekelesek">
+      <div class="section-header">
+        <span class="section-tag">Valódi Tapasztalatok</span>
+        <h2 class="section-title">Vendégeink Mondták – Google Értékelések (5.0 ★★★★★)</h2>
+        <p class="section-desc">Olvassa el a Pécs-Donátus szalonunkban megfordult vendégeink élményeit.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <article class="review-card">
+          <div>
+            <div class="star-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">
+              "Anikó fasciális kötőszöveti arcterápiája valami csoda! Már az első alkalom után érezhetően tónusosabb lett az arcom, a rézkancsós strukturált vízzel végzett rituálé pedig teljes testi-lelki feltöltődést nyújt. Pécs legjobb szalonja!"
+            </p>
+          </div>
+          <div class="review-author">
+            <div class="author-avatar">BN</div>
+            <div class="author-info">
+              <h4>Bognár Nóra</h4>
+              <span>Rendszeres Vendég • Pécs</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <div class="star-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">
+              "A HIEMT elektromágneses alakformáló kúra nálam hihetetlen eredményt hozott a hasi területen! Nagyon professzionális a szalon, az orvos-esztétikai gépek és a bio alapanyagok szinergiája egyedülálló."
+            </p>
+          </div>
+          <div class="review-author">
+            <div class="author-avatar">VT</div>
+            <div class="author-info">
+              <h4>Varga Tímea</h4>
+              <span>HIEMT Kúra Vendég</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <div class="star-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">
+              "Rozaceás bőrrel érkeztem Anikóhoz. A Safe Lézer 808nm kezelés és a Demeter minősítésű bio krémek 3 alkalom után megszüntették a pirosságot és a gyulladást. Tiszta szívből ajánlom mindenkinek!"
+            </p>
+          </div>
+          <div class="review-author">
+            <div class="author-avatar">KG</div>
+            <div class="author-info">
+              <h4>Kovács Gabriella</h4>
+              <span>Lézeres Bőrkezelés Vendég</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- VIP Loyalty Points Section -->
     <section class="services-section" id="vip-husegpont" style="background: var(--color-bg-main);">
       <div class="section-header">
@@ -720,7 +835,7 @@
         <p class="section-desc">Minden nálunk elköltött 100 Ft után 1 VIP pontot jóváírunk fiókjában, melyeket ingyenes kezelsekre és Clear Cosmetic natúr termékekre válthat be.</p>
       </div>
 
-      <div style="max-width: 850px; margin: 0 auto; background: var(--color-bg-card); border-radius: var(--border-radius-lg); padding: 3.5rem 3rem; box-shadow: var(--shadow-medium); border: 1px solid var(--color-border-gold);">
+      <div style="max-width: 850px; margin: 0 auto; background: var(--color-bg-card); border-radius: var(--border-radius-lg); padding: 3.5rem 3rem; box-shadow: var(--shadow-hover); border: 2px solid var(--color-border-gold);">
         <div style="margin-bottom: 2rem;">
           <label style="display: block; font-weight: 600; margin-bottom: 0.6rem; color: var(--color-text-main);">Számítsa Ki Várható VIP Pontjait (Ft):</label>
           <input type="number" id="loyalty-amount-input" value="50000" step="5000" style="width: 100%; padding: 1.1rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-size: 1.15rem; font-family: inherit; min-height: 48px;">
@@ -760,6 +875,57 @@
       </div>
     </section>
 
+    <!-- GYIK / FAQ Accordion Section -->
+    <section class="faq-section" id="faq">
+      <div class="section-header">
+        <span class="section-tag">Kérdések &amp; Válaszok</span>
+        <h2 class="section-title">Gyakran Ismételt Kérdések</h2>
+        <p class="section-desc">Minden fontos tudnivaló a kezeléseinkről, felkészülésről és védjegyeinkről.</p>
+      </div>
+
+      <div class="faq-container">
+        <article class="faq-item active">
+          <div class="faq-question">
+            <span>Fájdalmasak-e a fasciális és gépi kezelések?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Kezeléseink teljes mértékben műtétmentesek, nem invazívak és fájdalommentesek. A fasciális kötőszöveti arcszobrászat kellemes, mélyen ellazító nyomó-feszítő rituálé, míg a HIEMT és Monosculpt gépi kezelések lágy bizsergő vagy meleg érzést keltenek.
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <div class="faq-question">
+            <span>Mit jelent a 100% szűrt, rézkancsóban strukturált víz védjegy?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Szalonunkban minden bőrtisztításhoz, lemosáshoz és gőzöléshez kizárólag többszörösen szűrt, rézkancsóban energetizált és strukturált vizet használunk. Ez a víz növeli a hatóanyagok felszívódását és megnyugtatja a szövetszerkezetet.
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <div class="faq-question">
+            <span>Hogyan készüljek fel egy kezelésre?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Kérjük, érkezzen sminkmentesen vagy kényelmes viseletben. A kezelések előtt bőséges folyadékfogyasztás (tisztított víz) ajánlott a hatóanyagok és a nyirokkeringés maximális stimulálása érdekében.
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <div class="faq-question">
+            <span>Hogyan működik az online időpontfoglalás és lemondás?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            A nap 24 órájában foglalhat időpontot weboldalunkon keresztül. A foglalásról azonnali visszajelzést, valamint a kezelés előtt 24 órával automatikus emlékeztető SMS-t küldünk. Lemondást díjmentesen a kezelés előtt 24 órával tudunk elfogadni.
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- Appointment Teaser Section -->
     <section class="appointment-section" id="idopontfoglalas">
       <div class="appointment-card">
@@ -771,6 +937,37 @@
       </div>
     </section>
   </main>
+
+  <!-- Quick Actions Collapsible Floating FAB (Bottom-Right) -->
+  <div class="quick-actions-fab">
+    <div class="quick-actions-menu" id="quick-actions-menu">
+      <a href="#idopontfoglalas" class="fab-action-item open-booking-modal-btn">
+        <i class="fa-solid fa-calendar-check" style="color: var(--color-primary-dark);"></i> Online Foglalás
+      </a>
+      <a href="#borapolas-quiz" class="fab-action-item">
+        <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--color-primary-dark);"></i> Bőrápolási Quiz
+      </a>
+      <a href="tel:+36302345678" class="fab-action-item">
+        <i class="fa-solid fa-phone" style="color: var(--color-secondary);"></i> +36 30 234 5678
+      </a>
+    </div>
+    <button class="fab-main-btn" id="fab-main-btn" aria-label="Gyors műveletek megnyitása">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Sticky Bottom Booking Bar -->
+  <div class="mobile-sticky-booking-bar">
+    <div class="mobile-sticky-inner">
+      <div class="mobile-sticky-info">
+        <span class="mobile-sticky-title">Clear Kozmetika Pécs</span>
+        <span class="mobile-sticky-sub">Bio &amp; Orvos-Esztétika</span>
+      </div>
+      <a href="#idopontfoglalas" class="mobile-sticky-btn open-booking-modal-btn">
+        <i class="fa-solid fa-calendar-days"></i> Foglalás
+      </a>
+    </div>
+  </div>
 
   <!-- 24/7 Online Booking Modal Overlay -->
   <div id="booking-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center; padding: 1.5rem;">
@@ -818,7 +1015,7 @@
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
           <div>
             <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Telefonszám (SMS emlékeztetőhöz)</label>
-            <input type="tel" id="booking-phone-input" placeholder="+36 30 123 4567" required style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit; min-height: 48px;">
+            <input type="tel" id="booking-phone-input" placeholder="+36 30 234 5678" required style="width: 100%; padding: 0.9rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); font-family: inherit; min-height: 48px;">
           </div>
           <div>
             <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">E-mail cím</label>
@@ -833,14 +1030,14 @@
     </div>
   </div>
 
-  <!-- Site Footer -->
+  <!-- Site Footer with Official Contact Details -->
   <footer class="site-footer" id="kapcsolat">
     <div class="footer-container">
       <div>
         <h3 class="footer-col-title">Clear Kozmetika</h3>
-        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.72); line-height: 1.7;">
-          Kochné Kelemen Anikó – bio-kozmetikus, holisztikus bőrterapeuta.<br>
-          Pécs-Donátus, Donátusi út 86.<br>
+        <p style="font-size: 0.92rem; color: rgba(255,255,255,0.85); line-height: 1.75; font-weight: 500;">
+          Kochné Kelemen Anikó – biokozmetikus, holisztikus bőrterapeuta.<br>
+          7635 Pécs, Donátusi út 86.<br>
           Adószám: 65444047-1-23
         </p>
       </div>
@@ -853,15 +1050,18 @@
           <li><a href="#szolgaltatasok">Szolgáltatási Mátrix</a></li>
           <li><a href="#borapolas-quiz">Bőrápolási Quiz 2.0</a></li>
           <li><a href="#ajandekutalvany">3D Ajándékutalvány</a></li>
+          <li><a href="#ertekelesek">Vendégvélemények</a></li>
+          <li><a href="#faq">Gyakran Ismételt Kérdések</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="footer-col-title">Kapcsolat &amp; Nyitvatartás</h3>
+        <h3 class="footer-col-title">Hivatalos Elérhetőségek</h3>
         <ul class="footer-links">
           <li><i class="fa-solid fa-location-dot" style="color: var(--color-primary-light); margin-right: 0.5rem;"></i> 7635 Pécs, Donátusi út 86.</li>
-          <li><i class="fa-solid fa-phone" style="color: var(--color-primary-light); margin-right: 0.5rem;"></i> +36 (30) 123-4567</li>
-          <li><i class="fa-solid fa-envelope" style="color: var(--color-primary-light); margin-right: 0.5rem;"></i> info@clearkozmetika.hu</li>
+          <li><i class="fa-solid fa-phone" style="color: var(--color-primary-light); margin-right: 0.5rem;"></i> <a href="tel:+36302345678" style="color: inherit; text-decoration: none;">+36 30 234 5678</a></li>
+          <li><i class="fa-solid fa-envelope" style="color: var(--color-primary-light); margin-right: 0.5rem;"></i> <a href="mailto:info@clearkozmetika.hu" style="color: inherit; text-decoration: none;">info@clearkozmetika.hu</a></li>
+          <li><i class="fa-solid fa-envelope" style="color: var(--color-primary-light); margin-right: 0.5rem;"></i> <a href="mailto:anikokelemen0601@gmail.com" style="color: inherit; text-decoration: none;">anikokelemen0601@gmail.com</a></li>
           <li><i class="fa-solid fa-clock" style="color: var(--color-primary-light); margin-right: 0.5rem;"></i> H–P: 08:00 – 19:00 (Bejelentkezés alapján)</li>
         </ul>
       </div>

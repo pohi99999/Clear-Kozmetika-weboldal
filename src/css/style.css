@@ -1,7 +1,277 @@
-/* Non-Critical Component Styles for Clear Kozmetika (Asynchronous Load) */
+/* Non-Critical Component Styles for Clear Kozmetika */
 @import url('./components/brand-split.css');
 @import url('./components/services.css');
 @import url('./components/calculator.css');
 @import url('./components/giftcard.css');
 @import url('./components/appointment.css');
 @import url('./components/footer.css');
+
+/* Quick Actions FAB (Floating Action Button) */
+.quick-actions-fab {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.fab-main-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: var(--color-text-main);
+  border: none;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fab-main-btn:hover {
+  transform: scale(1.08) rotate(5deg);
+}
+
+.fab-main-btn.active {
+  transform: rotate(45deg);
+  background: var(--color-bg-dark);
+  color: var(--color-primary-light);
+}
+
+.quick-actions-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+}
+
+.quick-actions-menu.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.fab-action-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius-pill);
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-text-main);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.fab-action-item:hover {
+  transform: translateX(-4px);
+  background: white;
+  color: var(--color-primary-dark);
+}
+
+/* Sticky Mobile Bottom Booking Bar */
+.mobile-sticky-booking-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(251, 248, 245, 0.96);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--color-border-gold);
+  padding: 0.7rem 1.2rem;
+  z-index: 1100;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.08);
+}
+
+.mobile-sticky-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-sticky-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-sticky-title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.mobile-sticky-sub {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.mobile-sticky-btn {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: var(--color-text-main);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius-pill);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-gold);
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-booking-bar {
+    display: block;
+  }
+  .quick-actions-fab {
+    bottom: 75px;
+  }
+}
+
+/* Reviews / Testimonials Section */
+.reviews-section {
+  padding: 5.5rem 2rem;
+  background: var(--color-bg-alt);
+  position: relative;
+}
+
+.reviews-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.review-card {
+  background: var(--color-bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 2.2rem;
+  border: 1px solid var(--color-border-gold);
+  box-shadow: var(--shadow-medium);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.star-rating {
+  color: #FFD700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  font-style: italic;
+  color: var(--color-text-main);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.author-info h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.author-info span {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* FAQ / GYIK Accordion Section */
+.faq-section {
+  padding: 5.5rem 2rem;
+  background: var(--color-bg-main);
+}
+
+.faq-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--color-bg-card);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  transition: border-color 0.3s ease;
+}
+
+.faq-item.active {
+  border-color: var(--color-primary);
+}
+
+.faq-question {
+  padding: 1.4rem 1.8rem;
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-main);
+  user-select: none;
+}
+
+.faq-answer {
+  padding: 0 1.8rem 1.4rem 1.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  font-size: 0.95rem;
+  display: none;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+  color: var(--color-primary-dark);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}

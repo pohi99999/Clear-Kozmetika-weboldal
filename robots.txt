@@ -1,0 +1,5 @@
+# robots.txt for Clear Kozmetika (Kelemen Anikó) Pécs
+User-agent: *
+Allow: /
+
+Sitemap: https://clear-kozmetika.vercel.app/sitemap.xml

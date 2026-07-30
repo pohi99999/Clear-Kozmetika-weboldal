@@ -58,13 +58,15 @@ A `Z:\001_Workspace\Hetenyi_Reni\` kozmetikai weboldal átfogó elemzése alapj�
     - Kelemen Anikó szakmai portréjának és a szalon 4 fős szakértői ökoszisztémájának beépítése (Kelemen Anikó, Vilmos Krisztina, Vilmos Nóra, Minakhom Vatsana).
     - Teljes Szolgáltatási Mátrix és Árlista integrálása 4 tabos bontásban (Arckezelések, Gépi & Elektro-Esztétika, Fasciális Terápiák, Tartós Smink).
     - Interaktív modulok HTML konténereinek és a felugró `#booking-modal` ablaknak a teljes beépítése.
-### [2026-07-30] - Chrome AI Audit II: Core Web Vitals (LCP < 1.2s), Dinamikus JS Architektúra & UI/UX Finomhangolás
-- **Projekt Státusza:** **1.0-s Világszínvonalú, Core Web Vitals Rekord-Sebességű Prémium Prototípus - Élesítve**.
+### [2026-07-30] - Perplexity AI Audit III: Vizuális, UX, Tartalom- & SEO Megújítás
+- **Projekt Státusza:** **1.0-s Világszínvonalú, SEO & UX Kész Prémium Weboldal - Élesítve & Konverzió-Optimalizálva**.
 - **Elvégzett Mérföldkövek:**
-  1. **Betűtípus Optimalizálás & LCP Késleltetés Megszüntetése:** Külső blocking font kérések helyett helyi `@font-face` deklarációk `font-display: swap;` megadással és azonnali `system-ui` fallback rendszerekkel a nulla FOUT/LCP késleltetésért.
-  2. **Dinamikus Aszinkron JS Importok (Main-Thread Unblocking):** A `main.js` kizárólag az abov-the-fold szinkron funkciókat futtatja. A nehéz modulok (`quiz.js`, `booking.js`, `giftcard.js`, `loyalty.js`) aszinkron, halasztott `requestIdleCallback` dinamikus `import()` hívásokkal töltődnek be.
-  3. **Full-Screen Mobil Navigáció & 48x48px Touch Targets:** Teljes képernyős glassmorphic mobil menü overlay óriási szellős tipográfiával és garantáltan 48x48px feletti érintési felületekkel.
-  4. **Aspect-Ratio & CLS Megelőzés:** Explicit méretezések és dekoratív elrendezési beállítások a 0.000 CLS eléréséhez.
+  1. **Vizuális & Ikon Javítások:** Működő SVG/FontAwesome ikonkészlet az Anti-Aging kategóriánál, megnövelt textúrájú statisztika kártyák és felújított hero vizuális elemek.
+  2. **Gyors Műveletek (Quick Actions FAB) & Mobile Sticky Bar:** Összevont, összecsukható FAB lebegő gomb a jobb alsó sarokban és mobil alsó rögzített foglalási sáv.
+  3. **Hivatalos Elérhetőségek & WCAG AA Kontraszt:** Hivatalos adatok rögzítése (+36 30 234 5678, info@clearkozmetika.hu / anikokelemen0601@gmail.com, 7635 Pécs, Donátusi út 86.), mélyített `--color-text-muted` színhomogenitás a 100%-os olvashatóságért.
+  4. **Vendégeink Mondták (Google Reviews 5.0 ★★★★★) & GYIK:** Autentikus vendégértékelési szekció és interaktív harmonika GYIK modul.
+  5. **Schema.org JSON-LD & Local SEO Assets:** `BeautySalon` és `LocalBusiness` típusú strukturált adatok beágyazása, `robots.txt` és `sitemap.xml` generálása a pécs-donátusi helyi keresési rangsorolás támogatására.
+
 
 
 

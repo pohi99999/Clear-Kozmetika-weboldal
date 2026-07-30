@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initBrandSplit();
   initServiceTabs();
   initScrollReveal();
+  initQuickActions();
+  initFAQAccordion();
 
   // 2. Dynamic Asynchronous Module Loading (Unblocking Main Thread)
   if ('requestIdleCallback' in window) {
@@ -23,14 +25,12 @@ function initHeader() {
   const header = document.querySelector('.site-header');
   if (!header) return;
 
-  let lastScrollY = window.scrollY;
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
-    lastScrollY = window.scrollY;
   }, { passive: true });
 }
 
@@ -114,7 +114,7 @@ function initServiceTabs() {
 }
 
 function initScrollReveal() {
-  const revealElements = document.querySelectorAll('.split-card, .service-card, .calculator-card, .giftcard-container, .appointment-card');
+  const revealElements = document.querySelectorAll('.split-card, .service-card, .calculator-card, .giftcard-container, .appointment-card, .review-card, .faq-item');
   
   revealElements.forEach(el => {
     el.classList.add('reveal-on-scroll');
@@ -135,6 +135,45 @@ function initScrollReveal() {
   }, observerOptions);
 
   revealElements.forEach(el => revealObserver.observe(el));
+}
+
+function initQuickActions() {
+  const fabBtn = document.getElementById('fab-main-btn');
+  const fabMenu = document.getElementById('quick-actions-menu');
+
+  if (fabBtn && fabMenu) {
+    fabBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      fabBtn.classList.toggle('active');
+      fabMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', () => {
+      fabBtn.classList.remove('active');
+      fabMenu.classList.remove('active');
+    });
+  }
+}
+
+function initFAQAccordion() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const parentItem = question.closest('.faq-item');
+      if (!parentItem) return;
+
+      const isActive = parentItem.classList.contains('active');
+
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      if (!isActive) {
+        parentItem.classList.add('active');
+      }
+    });
+  });
 }
 
 async function loadFunctionalModules() {
